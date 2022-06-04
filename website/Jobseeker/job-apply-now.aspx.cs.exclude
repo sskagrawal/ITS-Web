@@ -1,0 +1,94 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+
+public partial class JobApplyNow : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            if (Request.QueryString["JID"] != null)
+            {
+                hdfJobMSTID.Value = Request.QueryString["JID"].ToString();
+                if(hdfJobMSTID.Value!=string.Empty)
+                {
+                    DataTable dt = DataAccess.GetData("select * from View_FindJob where [job_Id]="+hdfJobMSTID.Value+"");
+                    if(dt.Rows.Count>0)
+                    {
+                        lblCompanyName.Text = dt.Rows[0]["CompanyName"].ToString();
+                        lblAddr.Text= dt.Rows[0]["Address"].ToString();
+                        lblEmailID.Text= dt.Rows[0]["EmailID"].ToString();
+                        lblMobileNo.Text= dt.Rows[0]["MobileNo"].ToString();
+                        
+                        lblPersonName.Text= dt.Rows[0]["Name"].ToString();
+                        if (dt.Rows[0]["Website"].ToString() != string.Empty)
+                        {
+                            lblWeb.Text = "<a href='"+ dt.Rows[0]["Website"].ToString() + "' target='_blank'>"+ dt.Rows[0]["Website"].ToString() + "</a>";
+                        }
+                        else
+                        {
+                            lblWeb.Text = "Not Available";
+                        }
+                        hdfUserID.Value = dt.Rows[0]["UserID"].ToString();
+
+                        
+                        if (Session["sridd"] != null)
+                        {
+                            hdfRequsetID.Value = Session["sridd"].ToString();
+                            SqlCommand cmd = new SqlCommand("INSERT INTO [JobApply] ([RequestID],[UserID],[JobID],[CreateOn]) VALUES(@RequestID,@UserID,@JobID,@CreateOn) select SCOPE_IDENTITY();");
+                            cmd.Parameters.AddWithValue("@RequestID", hdfRequsetID.Value);//Job apple user ID
+                            cmd.Parameters.AddWithValue("@UserID", hdfUserID.Value);//job Post ID for Employee
+                            cmd.Parameters.AddWithValue("@JobID", hdfJobMSTID.Value);//Job ID
+                            cmd.Parameters.AddWithValue("@CreateOn", DateTime.Now);
+                            string var = DataAccess.InsertExecuteScalar(cmd);
+                            //if (var != string.Empty)
+                            //{
+                            //    Response.Redirect("~/FindJob.aspx?UID="+var);
+                            //}
+                            alert.Visible = true;
+                            lblMSG.Text = "You are successfully Applied for the post of <strong>"+dt.Rows[0]["job_Title"].ToString()+"</strong>";
+                            hdfJobMSTID.Value = string.Empty;
+                            hdfRequsetID.Value = string.Empty;
+                            hdfUserID.Value = string.Empty; 
+                        }
+
+                        }
+                }
+
+                //if (Session["sridd"] != null)
+                //{
+                //    try
+                //    {
+                //        hdfUserID.Value = DataAccess.GetSingleValue("Select UserID from [Job_Master] where job_Id ='" + hdfJobMSTID.Value + "'");
+                //    }
+                //    catch { }
+                //    hdfRequsetID.Value = Session["sridd"].ToString();
+                //    SqlCommand cmd = new SqlCommand("INSERT INTO [JobApply] ([RequestID],[UserID],[JobID],[CreateOn]) VALUES(@RequestID,@UserID,@JobID,@CreateOn) select SCOPE_IDENTITY();");
+                //    cmd.Parameters.AddWithValue("@RequestID", hdfRequsetID.Value);//Job apple user ID
+                //    cmd.Parameters.AddWithValue("@UserID", hdfUserID.Value);//job Post ID for Employee
+                //    cmd.Parameters.AddWithValue("@JobID", hdfJobMSTID.Value);//Job ID
+                //    cmd.Parameters.AddWithValue("@CreateOn", DateTime.Now);
+                //    string var = DataAccess.InsertExecuteScalar(cmd);
+                //    //if (var != string.Empty)
+                //    //{
+                //    //    Response.Redirect("~/FindJob.aspx?UID="+var);
+                //    //}
+
+                //    hdfJobMSTID.Value = string.Empty;
+                //    hdfRequsetID.Value = string.Empty;
+                //    hdfUserID.Value = string.Empty;
+
+                //}
+            }
+
+
+        }
+
+    }
+}

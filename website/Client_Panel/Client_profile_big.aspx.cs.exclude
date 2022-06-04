@@ -1,0 +1,555 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.IO;
+using System.Data.SqlClient;
+
+public partial class Client_Panel_Client_profile_big : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+
+            if (Session["partyid"] != null)
+            {
+                Session["urrr"] = null;
+
+                hdfClientId.Value = Session["partyid"].ToString();
+                if (Request.QueryString["pId"] != null)
+                {
+                    hdfClientId.Value = Request.QueryString["pId"].ToString();
+                }
+                    if (Request.QueryString["uTp"] != null)
+                {
+                    hdfusertypeid.Value = Request.QueryString["uTp"].ToString();
+                    contTab.Visible = false;
+                    stepContent3.Visible = false;
+                    docDiv.Visible = false;
+                    stepContent4.Visible = false;
+                    editPrflDiv.Visible = false;
+                }
+                else if (Session["ttppd"] != null)
+                {
+                    hdfusertypeid.Value = Session["ttppd"].ToString();
+                }
+
+                    if (hdfusertypeid.Value == "4" || hdfusertypeid.Value == "2")  // Company
+                    {
+                        divCompnay.Visible = true;
+                        divCompGST.Visible = true;
+                        divDesignation.Visible = true;
+
+                        divWebsite.Visible = true;
+
+                        divjobTitle.Visible = false;
+                        divJobType.Visible = false;
+                        divQualification.Visible = false;
+                        establisedDiv.Visible = true;
+                        budgetDiv.Visible = false;
+                    BusJobTab.InnerText = "Business";
+
+                        bind_ClientProfile();
+                    }
+
+                    else if (hdfusertypeid.Value == "3")
+                    {
+                        divCompnay.Visible = false;
+                        divCompGST.Visible = false;
+                        divDesignation.Visible = false;
+                        divWebsite.Visible = false;
+
+                        divjobTitle.Visible = true;
+                        divJobType.Visible = true;
+                        divQualification.Visible = true;
+                        expDiv.Visible = true;
+                        budgetDiv.Visible = true;
+                    BusJobTab.InnerText = "Job Profile";
+                        bind_ClientProfile();
+                    }
+
+
+
+                
+            }
+            else
+            {
+                if (Request.QueryString["pId"] != null)
+                {
+                    Session["urrr"] = "~/Client_Panel/Client_profile_big.aspx?uTp=3&pId="+ Request.QueryString["pId"].ToString();
+                }
+                    
+                Response.Redirect("~/Admin/Login.aspx");
+            }
+        }
+    }
+
+    public string coverPhoto = string.Empty;
+
+    public void bind_ClientProfile()
+    {
+
+        DataTable dt = DataAccess.GetData("select * from [PartyMaster] where [PartyID]=" + hdfClientId.Value + "");
+        if (dt.Rows.Count > 0)
+        {
+            DataTable dtbnr = DataAccess.GetData("Select * from  [PartyDocument_Master] where [PartyID]=" + hdfClientId.Value + " and [Document_Name]='Banner Photo'     ");
+            if (dtbnr.Rows.Count > 0)
+            {
+
+                if (dtbnr.Rows[0]["Upload_File"].ToString() != string.Empty)
+                {
+                    coverPhoto = "../ClientContractDoc/" + dtbnr.Rows[0]["Upload_File"].ToString() + "";
+                    //ltrProfile.Text += "<div class='up-head-w' style='background-image:url(../ClientContractDoc/" + dtbnr.Rows[0]["Upload_File"].ToString() + ")'>";
+
+                }
+
+                else
+                {
+                    coverPhoto = "../ClientContractDoc/CompBanner.jpg";
+                    //ltrProfile.Text += "<div class='up-head-w' style='background-image:url(../ClientContractDoc/CompBanner.jpg)'>";
+
+                }
+            }
+            else
+            {
+                coverPhoto = "../ClientContractDoc/CompBanner.jpg";
+                //ltrProfile.Text += "<div class='up-head-w' style='background-image:url(../ClientContractDoc/CompBanner.jpg)'>";
+
+            }
+            //ltrProfile.Text += "<div class='up-social'>";
+            //ltrProfile.Text += "<a href='#'><i class='os-icon os-icon-twitter'></i></a>";
+            //ltrProfile.Text += "<a href='#'><i class='os-icon os-icon-facebook'></i></a>";
+            //ltrProfile.Text += "</div>";
+            //ltrProfile.Text += "<div class='up-main-info'> ";
+            //ltrProfile.Text += "<div class='user-avatar-w'>";
+            //ltrProfile.Text += "<div class='user-avatar'>";
+
+            DataTable dtpl = DataAccess.GetData("Select * from  [PartyDocument_Master] where [PartyID]=" + hdfClientId.Value + " and [Document_Name]='Profile Photo'");
+            if (dtpl.Rows.Count > 0)
+            {
+
+                if (dtpl.Rows[0]["Upload_File"].ToString() != string.Empty)
+                {
+                    imgLogo.Src = "../ClientContractDoc/" + dtpl.Rows[0]["Upload_File"].ToString() + "";
+                    //ltrProfile.Text += "<img alt = '' src='../ClientContractDoc/" + dtpl.Rows[0]["Upload_File"].ToString() + "'/>";
+                }
+
+                else
+                {
+                    imgLogo.Src = "../images/dummy.jpg";
+                    //ltrProfile.Text += "<img alt = '' src='../ClientContractDoc/complogo.jpg'/>";
+
+                }
+            }
+            else
+            {
+                imgLogo.Src = "../images/dummy.jpg";
+                //ltrProfile.Text += "<img alt = '' src='../ClientContractDoc/complogo.jpg'/>";
+
+            }
+            lbl1.Text = dt.Rows[0]["Party_name"].ToString();
+            lbl2.Text = dt.Rows[0]["Comp_tagline"].ToString();
+            //ltrProfile.Text += "</div>";
+            //ltrProfile.Text += "</div>";
+            //ltrProfile.Text += "<h1 class='up-header'>" + dt.Rows[0]["Party_name"].ToString() + "</h1>";
+            //ltrProfile.Text += "<h5 class='up-sub-header'>" + dt.Rows[0]["Comp_tagline"].ToString() + "</h5>";
+            //ltrProfile.Text += "</div>";
+            //ltrProfile.Text += "<svg class='decor' width='842px' height='219px' viewBox='0 0 842 219' preserveAspectRatio='xMaxYMax meet' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g transform = 'translate(-381.000000, -362.000000)' fill='#FFFFFF'><path class='decor-path' d='M1223,362 L1223,581 L381,581 C868.912802,575.666667 1149.57947,502.666667 1223,362 Z'></path></g></svg>";
+            //ltrProfile.Text += "</div>";
+
+        }
+
+        Bind_Client_Profile();
+    
+    }
+    public void Bind_Client_Profile()
+    {
+        DataTable dt = DataAccess.GetData("select * from [View_PartyMaster_new] where [PartyID]=" + hdfClientId.Value + "");
+        if (dt.Rows.Count > 0)
+        {
+            //Personal Profile
+            lblFullName.Text = dt.Rows[0]["Contact_person_name"].ToString();
+            lblMobile.Text = dt.Rows[0]["mobile_no"].ToString();
+
+            if (dt.Rows[0]["phone_no"].ToString() != string.Empty)
+            {
+                lblWhatsapp.Text = dt.Rows[0]["phone_no"].ToString();
+            }
+            else
+            {
+                lblWhatsapp.Text = "&nbsp;";
+            }
+            lblEmail.Text = dt.Rows[0]["Email"].ToString();
+
+            //Job Profile         
+
+            if (dt.Rows[0]["Comp_Category"].ToString() != string.Empty)
+            {
+               
+                lblJobCategory.Text = dt.Rows[0]["Comp_Category"].ToString();
+            }
+            else
+            {
+                lblJobCategory.Text = "&nbsp;";
+            }          
+
+
+            if (dt.Rows[0]["JobSubCateName"].ToString() != string.Empty)
+            {
+
+                lbljobSubCategory.Text = dt.Rows[0]["JobSubCateName"].ToString();
+            }
+            else
+            {
+                lbljobSubCategory.Text = "&nbsp;";
+            }
+
+            //Job Skill
+            DataTable dtskill = DataAccess.GetData("Select distinct [Skill_Name] from [View_Post_Job_Skill] Where [PartyID]=" + hdfClientId.Value + " ");
+            if (dtskill.Rows.Count > 0)
+            {
+                for (int i = 0; i < dtskill.Rows.Count; i = i + 1)
+                {
+                    ltrskill.Text += "<li class='nav-item'><a class='nav-link active' data-toggle='tab' href='#' aria-expanded='true'>" + dtskill.Rows[i]["Skill_Name"].ToString() + " </a></li>&nbsp";
+
+                }
+            }          
+
+
+            if (dt.Rows[0]["Party_name"].ToString() != string.Empty)
+            {
+
+                lblCompanyName.Text = dt.Rows[0]["Party_name"].ToString();
+            }
+            else
+            {
+                lblCompanyName.Text = "&nbsp;";
+            }           
+
+
+            if (dt.Rows[0]["Gst_no"].ToString() != string.Empty)
+            {
+
+                lblComGST.Text = dt.Rows[0]["Gst_no"].ToString();
+            }
+            else
+            {
+                lblComGST.Text = "&nbsp;";
+            }           
+
+
+            if (dt.Rows[0]["Designation"].ToString() != string.Empty)
+            {
+
+                lblDesignation.Text = dt.Rows[0]["Designation"].ToString();
+            }
+            else
+            {
+                lblDesignation.Text = "&nbsp;";
+            }          
+
+
+            if (dt.Rows[0]["Website"].ToString() != string.Empty)
+            {
+
+                lblwebsite.Text = dt.Rows[0]["Website"].ToString();
+            }
+            else
+            {
+                lblwebsite.Text = "&nbsp;";
+            }          
+
+
+            if (dt.Rows[0]["job_Title"].ToString() != string.Empty)
+            {
+
+                lblJobTitle.Text = dt.Rows[0]["job_Title"].ToString();
+            }
+            else
+            {
+                lblJobTitle.Text = "&nbsp;";
+            }          
+
+
+            if (dt.Rows[0]["JobSubCateName"].ToString() != string.Empty)
+            {
+
+                lbljobtype.Text = dt.Rows[0]["JobSubCateName"].ToString();
+            }
+            else
+            {
+                lbljobtype.Text = "&nbsp;";
+            }           
+
+
+            if (dt.Rows[0]["job_Qulalification"].ToString() != string.Empty)
+            {
+
+                lblQualification.Text = dt.Rows[0]["job_Qulalification"].ToString();
+            }
+            else
+            {
+                lblQualification.Text = "&nbsp;";
+            }           
+
+            if (dt.Rows[0]["Exp"].ToString() != string.Empty)
+            {
+
+                lblExperience.Text = dt.Rows[0]["Exp"].ToString();
+                lbljobExp.Text = dt.Rows[0]["Exp"].ToString();
+
+            }
+            else
+            {
+                lblExperience.Text = "none";
+                lbljobExp.Text = "none";
+            }
+            if (hdfusertypeid.Value == "4" || hdfusertypeid.Value == "2")
+            {
+                string compExp = string.Empty;
+                if (dt.Rows[0]["CompEstablishedDate"].ToString() != string.Empty)
+                {
+                    DateTime estDt = Convert.ToDateTime(dt.Rows[0]["CompEstablishedDate"].ToString());
+
+                    lbljobExp.Text = (DateTime.Now.Year - estDt.Year).ToString() + " Year(s)";
+                    lblEstablishdDt.Text = Convert.ToDateTime(dt.Rows[0]["CompEstablishedDate"].ToString()).ToString("dd/MM/yyyy");
+                }
+                else
+                {
+                    lbljobExp.Text = "none";
+                    lblEstablishdDt.Text = "&nbsp;";
+                }
+
+
+            }
+            //else if (hdfusertypeid.Value == "3")
+            //{
+                
+
+            //}
+            if (hdfusertypeid.Value == "4" || hdfusertypeid.Value == "2")
+            {
+                ltrlHireFollow.Text = "<a class='btn btn-secondary btn-sm' href=''> <i class='fa fa-user' aria-hidden='true'></i><span>Follow Me</span></a>";
+                Heading1.Text = "Company Overview";
+                ltrlCont1.Text = "<div class='value'>3814</div><div class='label'>Total Services</div>";
+                ltrlCont2.Text = "<div class='value'>3814</div><div class='label'>Total Earning</div>";
+                ltrlCont3.Text = "<div class='value'>3814</div><div class='label'>Total Spent</div>";
+                ltrlCont4.Text = "<div class='value'>3814</div><div class='label'>Total Followers</div>";
+
+                
+            }
+            else if (hdfusertypeid.Value == "3")
+            {
+                ltrlHireFollow.Text = "<a class='btn btn-secondary btn-sm' href=''> <i class='fa fa-user' aria-hidden='true'></i><span>Hire Me</span></a>";
+                Heading1.Text = "Profile Statistics";
+                ltrlCont1.Text = "<div class='value'>3814</div><div class='label'>Total Earning</div>";
+                ltrlCont2.Text = "<div class='value'>3814</div><div class='label'>Job Completed</div>";
+                ltrlCont3.Text = "<div class='value'>3814</div><div class='label'>No of Feedback</div>";
+                ltrlCont4.Text = "<div class='value'>3814</div><div class='label'>Cancelled</div>";
+            }
+
+                if (dt.Rows[0]["Comp_tagline"].ToString() != string.Empty)
+            {
+
+                lblTagline.Text = dt.Rows[0]["Comp_tagline"].ToString();
+            }
+            else
+            {
+                lblTagline.Text = "&nbsp;";
+            }
+
+
+            if (dt.Rows[0]["Min_Salary"].ToString() != string.Empty)
+            {
+                lblminbudget.Text = dt.Rows[0]["Min_Salary"].ToString();
+                //lblbudgetMin.Text = dt.Rows[0]["Min_Salary"].ToString();
+            }
+            else
+            {
+                lblminbudget.Text = "&nbsp;";
+            }          
+
+
+            if (dt.Rows[0]["Max_Salary"].ToString() != string.Empty)
+            {
+                lblmaxgudget.Text = dt.Rows[0]["Max_Salary"].ToString();
+                //lblbudgetMax.Text = dt.Rows[0]["Max_Salary"].ToString();
+            }
+            else
+            {
+                lblmaxgudget.Text = "&nbsp;";
+            }
+           
+
+            if (dt.Rows[0]["ShortDescription"].ToString() != string.Empty)
+            {
+                lblshortDesc.Text = dt.Rows[0]["ShortDescription"].ToString();
+                lblShortDesc1.Text= dt.Rows[0]["ShortDescription"].ToString();
+                shortDescDiv.Visible = true;
+            }
+            else
+            {
+                shortDescDiv.Visible = false;
+                lblshortDesc.Text = "&nbsp;";
+            }          
+
+
+            if (dt.Rows[0]["LongDescription"].ToString() != string.Empty)
+            {
+                lblLongDesc.Text = dt.Rows[0]["LongDescription"].ToString();
+            }
+            else
+            {
+                lblLongDesc.Text = "&nbsp;";
+            }
+            //Job Contract         
+
+
+            if (dt.Rows[0]["Country_Name"].ToString() != string.Empty)
+            {
+                lblCountry.Text = dt.Rows[0]["Country_Name"].ToString();
+            }
+            else
+            {
+                lblCountry.Text = "&nbsp;";
+            }
+
+            if (dt.Rows[0]["State_Name"].ToString() != string.Empty)
+            {
+                lblState.Text = dt.Rows[0]["State_Name"].ToString();
+            }
+            else
+            {
+                lblState.Text = "&nbsp;";
+            }         
+
+            if (dt.Rows[0]["City"].ToString() != string.Empty)
+            {
+                lblCity.Text = dt.Rows[0]["City"].ToString();
+            }
+            else
+            {
+                lblCity.Text = "&nbsp;";
+            }           
+
+            if (dt.Rows[0]["pincode"].ToString() != string.Empty)
+            {
+                lblPinCode.Text = dt.Rows[0]["pincode"].ToString();
+            }
+            else
+            {
+                lblPinCode.Text = "&nbsp;";
+            }           
+
+            if (dt.Rows[0]["address"].ToString() != string.Empty)
+            {
+                lblFullAddress.Text = dt.Rows[0]["address"].ToString();
+            }
+            else
+            {
+                lblFullAddress.Text = "&nbsp;";
+            }
+            if (hdfusertypeid.Value == "4" || hdfusertypeid.Value == "2")
+            {
+                //ltrlCatBudjt.Text = "<button class='btn btn-primary btn-sm'><i class='os-icon os-icon-link-3'></i><span>Category - </span>" + dt.Rows[0]["Comp_Category"].ToString() + "</button>";
+            }
+            else if (hdfusertypeid.Value == "3")
+            {
+                ltrlCatBudjt.Text = "<button class='btn btn-primary btn-sm'><i class='os-icon os-icon-link-3'></i><span>Budget - </span>" + dt.Rows[0]["Min_Salary"].ToString() + "</button>";
+            }
+                //Document
+
+                DataTable dt2 = DataAccess.GetData("Select * from [PartyDocument_Master] Where [PartyID]=" + hdfClientId.Value + " ");
+        if (dt2.Rows.Count > 0)
+        {
+            gvFileDetails.DataSource = dt2;
+            gvFileDetails.DataBind();
+        }
+
+            //Bank Profile          
+
+            if (dt.Rows[0]["Bank_Name"].ToString() != string.Empty)
+            {
+                lblBankName.Text = dt.Rows[0]["Bank_Name"].ToString();
+            }
+            else
+            {
+                lblBankName.Text = "&nbsp;";
+            }           
+
+            if (dt.Rows[0]["AccountHname"].ToString() != string.Empty)
+            {
+                lblAccHolder.Text = dt.Rows[0]["AccountHname"].ToString();
+            }
+            else
+            {
+                lblAccHolder.Text = "&nbsp;";
+            }
+           
+
+            if (dt.Rows[0]["BranceName"].ToString() != string.Empty)
+            {
+                lblBranchName.Text = dt.Rows[0]["BranceName"].ToString();
+            }
+            else
+            {
+                lblBranchName.Text = "&nbsp;";
+            }
+
+
+
+          
+
+            if (dt.Rows[0]["AccountNo"].ToString() != string.Empty)
+            {
+                lblAccNumber.Text = dt.Rows[0]["AccountNo"].ToString();
+            }
+            else
+            {
+                lblAccNumber.Text = "&nbsp;";
+            }
+
+
+            if (dt.Rows[0]["IFSCCoad"].ToString() != string.Empty)
+            {
+                lblIFSCCode.Text = dt.Rows[0]["IFSCCoad"].ToString();
+            }
+            else
+            {
+                lblIFSCCode.Text = "&nbsp;";
+            }
+
+           
+
+        }
+    }
+
+    protected void gvFileDetails_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            HiddenField hdfdocid = (HiddenField)e.Row.FindControl("hdfDocId");
+
+            Literal ltrCv = (Literal)e.Row.FindControl("ltrDoc");
+
+            DataTable dt = DataAccess.GetData("Select * from [PartyDocument_Master] Where [Document_Id]=" + hdfdocid.Value + " ");
+            if (dt.Rows.Count > 0)
+            {
+                if (dt.Rows[0]["Upload_File"].ToString() != string.Empty)
+                {
+                    ltrCv.Text = "<a href='../../ClientContractDoc/" + dt.Rows[0]["Upload_File"].ToString() + "' target='_blank'><img src='../img/Download.gif' alt='' /></a>";
+                }
+            }
+
+
+        }
+
+
+    }
+
+}

@@ -1,0 +1,341 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.master" AutoEventWireup="true" CodeFile="job_profile.aspx.cs" Inherits="Jobseeker_job_profile" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+
+      <script type="text/javascript">
+                                                            function HideLabel() {
+                                                                var seconds = 5;
+                                                                setTimeout(function () {
+                                                                    document.getElementById("<%=alert.ClientID %>").style.display = "none";
+                                                                }, seconds * 1000);
+                                                            };
+</script>  
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+      <asp:HiddenField ID="hdfUserName" runat="server"></asp:HiddenField>
+     <asp:HiddenField ID="hdfUserMob" runat="server"></asp:HiddenField>
+    <asp:HiddenField ID="hdfUserID" runat="server"></asp:HiddenField>
+    <div class="content-w"><!--------------------START - Breadcrumbs-------------------->
+    
+    
+    <ul class="breadcrumb">
+    
+    <li class="breadcrumb-item">
+        <a href="index.html">Home</a></li>
+    <li class="breadcrumb-item">
+        <a href="index.html">Jobseeker</a></li><li class="breadcrumb-item">
+        <span>Job Profile</span></li></ul>
+    <!--------------------
+END - Breadcrumbs
+-------------------->
+    <div class="content-panel-toggler">
+    <i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
+
+    <div class="content-i">
+    
+    <div class="content-box">
+        <div class="row"><div class="col-sm-12">
+            <div class="element-wrapper">
+            <div class="element-box">
+                <div id="formValidate">
+                <h5 class="form-header">Job Profile</h5>
+                
+                <div class="form-desc">
+
+                       <div id="alert" runat="server" visible="false" class="alert success">
+                                                        <%--<div class="alert-message">Your Profile Updated Successfully
+                                                        </div>--%>
+<asp:Label ID="lblMSG" runat="server" Text=""></asp:Label>
+                                                        <span class="close-alert">X</span>
+                                                        </div>
+
+
+
+                </div>
+
+
+
+                       <fieldset class="form-group">
+                    
+                    
+                    <legend><span>Jobseeker Profile</span></legend>
+
+
+
+                           <div class="row">
+                        
+                        <div class="col-sm-6">
+                            
+                            <div class="form-group">
+                                <label for=""> Job Category</label>
+
+                                  <asp:DropDownList ID="drdIndustry" CssClass="form-control" runat="server" OnSelectedIndexChanged="drdIndustry_SelectedIndexChanged" AutoPostBack="true">
+
+                                    </asp:DropDownList>                         
+                                
+                               <%-- <div class="help-block form-text text-muted form-control-feedback">Minimum of 6 characters</div>--%>
+
+                            </div>
+
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="">job belong to</label>
+
+                                 <asp:DropDownList ID="ddljobSubCategory" class="form-control" runat="server" OnSelectedIndexChanged="ddljobSubCategory_SelectedIndexChanged" AutoPostBack="true">
+
+
+      </asp:DropDownList>
+
+  
+         <asp:RequiredFieldValidator ID="rfvjobSubCategory" runat="server" ControlToValidate="ddljobSubCategory"
+                                            ErrorMessage="Select Category" InitialValue="0" ForeColor="Red" SetFocusOnError="True" ValidationGroup="sv"
+                                            Display="None">*</asp:RequiredFieldValidator>
+
+                                             <asp:ValidatorCalloutExtender ID="VCEjobsubCategory" 
+                                            runat="server" Enabled="True" TargetControlID="rfvjobSubCategory" WarningIconImageUrl="~/img/wrning.gif">
+                                        </asp:ValidatorCalloutExtender> 
+
+                              <%--  <input class="form-control" data-match-error="Passwords don&#39;t match" placeholder="Confirm Password" required="required" type="password">--%>
+                            <%--    <div class="help-block form-text with-errors form-control-feedback">--%>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                           <div class="row">
+                                  <div class="col-sm-6">
+                            
+                            <div class="form-group">
+                                  <label for="">  Job Skills </label>
+                               
+                              
+                       <asp:DropDownList ID="ddlSkill" class="form-control" runat="server">
+
+
+
+                                    </asp:DropDownList>
+                                </div>
+                                      </div>
+
+
+                                <div class="col-sm-6">
+                            
+                            <div class="form-group">
+
+                                <div class="form-group">
+                        <label for=""> Required job title</label>
+                   <%--     <input class="form-control" data-error="Your email address is invalid" placeholder="Enter email" required="required" type="email">--%>
+                        <asp:TextBox ID="txtJobTitle" class="form-control" runat="server"></asp:TextBox>
+
+                        <div class="help-block form-text with-errors form-control-feedback">
+
+                        </div>
+
+                    </div>
+
+                                </div>
+
+                        </div>
+                               </div>
+
+
+                    
+                    
+                    
+                    
+                     <div class="row">
+                     <div class="col-sm-6">
+                    
+                    <div class="form-group">
+                        <label for=""> Experience</label>
+                          <asp:DropDownList ID="drdExp"  class="form-control"  runat="server">
+                          <asp:ListItem Text="Select Experience" Value="0"></asp:ListItem>
+                          </asp:DropDownList>                  
+
+                    </div>
+
+                         </div>
+
+                         <div class="col-sm-6">
+                                        
+                                        <div class="form-group">
+                                            
+                                            <label for=""> Expected Salary</label>
+                                            
+                                            <div class="input-group">
+                                                
+                                                <div class="input-group-addon"><i class="fa fa-inr" aria-hidden="true"></i> </div>
+                                                
+                                              <asp:TextBox ID="txtSalary" class="form-control" placeholder="Expected Salary" runat="server"></asp:TextBox>
+                    
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                 
+
+
+                         </div>
+
+                        <div class="row">
+                              <div class="col-sm-6">
+                     <div class="form-group">
+                        <label for="">Qualification</label>
+
+                    <asp:DropDownList ID="drdQualification"  class="form-control" runat="server">
+<asp:ListItem Text="Select Qualification" Value="0"></asp:ListItem>
+</asp:DropDownList>
+                         </div>
+                                  </div>
+                             <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="">Enter Other Education</label>
+
+                      <asp:TextBox ID="txtEducation" class="form-control" placeholder="Enter Other Education" runat="server"></asp:TextBox>
+                        </div>
+                                 </div>
+                            </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                               <div class="form-group">
+                     <label>Job Preferred State</label>
+<asp:DropDownList ID="drdState" runat="server" class="form-control" AutoPostBack="true">
+<asp:ListItem Text="Select Job Preferred State " Value="0"></asp:ListItem>
+</asp:DropDownList>
+                                   </div>
+                            </div>
+
+                     <div class="col-sm-6">
+
+                          <div class="form-group">
+               <label>Job Preferred City</label>
+<asp:DropDownList ID="drdCity" class="form-control" runat="server">
+<asp:ListItem Text="Select Job Preferred City" Value="0"></asp:ListItem>
+</asp:DropDownList>
+</div>
+                         </div>
+                    </div>
+
+
+                      <div class="row">
+                        <div class="col-sm-6">
+
+                               <div class="form-group">
+                              <label>Job Type</label>
+                                 <asp:DropDownList ID="drdJobType" class="form-control" runat="server">
+                                                                           <asp:ListItem Text="Select Job Type"  Value="0"></asp:ListItem>
+                                                                           
+                                                                           </asp:DropDownList>
+                                   </div>
+                            </div>
+
+
+
+
+                           <div class="col-sm-6">
+
+                               <div class="form-group">
+                                <label>Job Description</label>
+                               <label>Description</label>
+                 <asp:TextBox ID="txtDes" TextMode="MultiLine" class="form-control" placeholder="Enter Your Description" runat="server"></asp:TextBox>
+
+                            </div>
+                                 
+                               </div>
+                          </div>
+
+
+                     
+
+
+
+                     <div class="row">
+                           <div class="col-sm-6">
+                                  <div class="form-group">
+                     <label>Upload CV</label>
+                <asp:FileUpload ID="fileUpCV" ToolTip="Upload Your CV" runat="server"></asp:FileUpload>
+               <asp:Label ID="lblfup" runat="server"></asp:Label>
+                   <asp:HiddenField ID="hdfCV" runat="server"></asp:HiddenField>
+                   </div>
+                </div>
+                           <div class="col-sm-6">
+                               </div>
+                         </div>
+                
+                
+            
+                    
+                   
+                    
+                    
+                    
+                    <div class="form-buttons-w">
+                        
+                        <button class="btn btn-primary" type="submit"> Submit</button>
+
+                    </div>
+                           
+                           </fieldset>
+
+                           </div>
+
+
+
+            </div></div></div></div><!--------------------
+START - Chat Popup Box
+-------------------->
+        
+        
+      
+        
+        
+        
+        
+        
+        <!--------------------
+END - Chat Popup Box
+--------------------></div><!--------------------
+START - Sidebar
+--------------------><div class="content-panel">
+    
+    <div class="content-panel-close">
+        <i class="os-icon os-icon-close"></i></div>
+    <div class="element-wrapper">
+        <h6 class="element-header">Agents List</h6>
+        <div class="element-box-tp">
+            <div class="profile-tile">
+                <div class="profile-tile-box">
+                    <div class="pt-avatar-w">
+                        <img alt="" src="img/avatar1.jpg">
+
+                    </div>
+                    <div class="pt-user-name">Mark Parson</div>
+
+                </div>
+                
+                <div class="profile-tile-meta">
+                    
+                    <ul><li>Last Login:<strong>Online Now</strong></li><li>Tickets:<strong>12</strong></li><li>Response Time:<strong>2 hours</strong></li></ul><div class="pt-btn"><a class="btn btn-success btn-sm" href="#">Send Message</a></div></div></div><div class="profile-tile"><div class="profile-tile-box"><div class="pt-avatar-w"><img alt="" src="img/avatar3.jpg"></div><div class="pt-user-name">Ken Morris</div></div><div class="profile-tile-meta"><ul><li>Last Login:<strong>Online Now</strong></li><li>Tickets:<strong>8</strong></li><li>Response Time:<strong>4 hours</strong></li></ul><div class="pt-btn"><a class="btn btn-success btn-sm" href="#">Send Message</a></div></div></div><div class="profile-tile"><div class="profile-tile-box"><div class="pt-avatar-w"><img alt="" src="img/avatar2.jpg"></div><div class="pt-user-name">John Newman</div></div><div class="profile-tile-meta"><ul><li>Last Login:<strong>Online Now</strong></li><li>Tickets:<strong>14</strong></li><li>Response Time:<strong>1 hour</strong></li></ul><div class="pt-btn"><a class="btn btn-danger btn-sm" href="#">Offline Now</a></div></div></div></div></div>
+    
+    
+    
+
+
+
+                     </div><!--------------------
+END - Sidebar
+--------------------></div>
+    
+    </div>
+
+</asp:Content>
+

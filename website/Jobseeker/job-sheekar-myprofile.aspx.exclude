@@ -1,0 +1,179 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="job-sheekar-myprofile.aspx.cs" Inherits="MyProfile" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<style>
+    .kkBtn
+    {
+    border: medium none;
+    color: #fff;
+    display: inline-block;
+    margin: 0 0 5px;
+    outline: medium none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase !important;
+    z-index: 1;
+    }
+</style>
+    
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+
+                <asp:HiddenField ID="hdfUserID" runat="server"> </asp:HiddenField>
+                <header class="rich-header page-header version1" data-parallax="true" id="header_d901_0">
+                    <div class="parallax-container" id="div_d901_0">&nbsp;</div>
+
+                    <div class="container nz-clearfix">
+                        <div class="rh-content">
+
+                            <h1 >My Profile</h1>
+
+                            <div class="rh-separator">&nbsp;</div>
+                            <div id="div_d901_1" class="nz-breadcrumbs nz-clearfix"><a runat="server" href="~/default.aspx"  property="v:title">Home</a><span class="current">My Profile</span></div>
+                        </div>
+                    </div>
+                    <div id="slider-arrow" data-target="#nz-target" data-from="90" data-offset="90" class="i-separator animate nz-clearfix"><i class="icon-arrow-down10"></i></div>
+                </header>
+
+                <div class="blog-layout-wrap standard sidebar-true" id="nz-target">
+
+                    <div id="loop" class="loop">
+                        <div class="container nz-clearfix">
+
+                            <section class="main-content left">
+                                <section class="content lazy blog-layout nz-clearfix">
+                                    <div class="blog-post blog-post-1 nz-clearfix">
+                                    <div class="column-12" style="text-align:center;">
+
+                                    <div class="col-inner">
+                                                    <h3 id="h3_01b4_1" class="vc_custom_heading ninzio-latter-spacing">My Profile</h3>
+                                                    <div class="sep-wrap element-animate element-animate-false center nz-clearfix" data-effect="none">
+                                                        <div class="nz-separator solid" id="div_01b4_21">&nbsp;</div>
+                                                    </div>
+                                                    
+                                                </div>
+                                   <br />
+                                   <div id="alert" runat="server" visible="false" class="alert success">
+                                         <asp:Label ID="lblMSG" runat="server" Text=""></asp:Label>
+                                                        <span class="close-alert">X</span>
+                                                        </div>
+
+                                                        <script type="text/javascript">
+                                                            function HideLabel() {
+                                                                var seconds = 5;
+                                                                setTimeout(function () {
+                                                                    document.getElementById("<%=alert.ClientID %>").style.display = "none";
+                                                                }, seconds * 1000);
+                                                            };
+</script>  
+                                       <p class="comment-form-author">
+                                            <label>Your Name</label>
+                  <asp:TextBox ID="txtName" class="ninzio-placeholder" placeholder="Enter Your Name" runat="server"></asp:TextBox>
+                                                                        </p>
+                                                                           <p class="comment-form-author">
+                                                                               <label>Mobile No.</label>
+                 <asp:TextBox ID="txtMob" class="ninzio-placeholder" placeholder="Enter Mobile Number" runat="server"></asp:TextBox>
+                                                                        </p>
+
+                                                                            <p class="comment-form-author">
+                                                                                <label>Email ID</label>
+                 <asp:TextBox ID="txtEmail" class="ninzio-placeholder" placeholder="Enter Your Email ID" runat="server"></asp:TextBox>
+                                                                        </p>
+
+                                                                         <p class="comment-form-author">
+                                                                             <label>Gendar</label>
+<asp:RadioButtonList ID="rbtGendar" runat="server" RepeatDirection="Horizontal">
+<asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+<asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+</asp:RadioButtonList>
+                                                                         </p>
+                                                                        <%-- <p class="comment-form-author">
+                                                              <asp:DropDownList ID="drdIndustry" runat="server">
+                                                              <asp:ListItem Text="Select Industry" Value="0"></asp:ListItem>
+                                                              </asp:DropDownList>     
+                                                                   </p>--%>
+                                                                     <p class="comment-form-author">
+                                                                           <label>Address</label>
+                 <asp:TextBox ID="txtAddress" TextMode="MultiLine" class="ninzio-placeholder" placeholder="Enter Your Address" runat="server"></asp:TextBox>
+                                                                        </p>
+
+  <%-- 
+                                                                            <p class="comment-form-author">
+                 <asp:TextBox ID="TextBox7" class="ninzio-placeholder" placeholder="Enter Your Name" runat="server"></asp:TextBox>
+                                                                        </p>--%>
+
+                                       <p class="form-submit">
+                                       <asp:LinkButton ID="lbtnSubmit" class="button button-ghost blue full-false medium square icon-true animate-false anim-type-ghost hover-side element-animate-false" runat="server" onclick="lbtnSubmit_Click"><strong>Update</strong></asp:LinkButton>
+       
+     
+
+                                                                     </p>
+
+                                        
+                                    </div>
+                                </section>
+                                
+                            </section>
+                            <aside class="sidebar">
+                                <aside class='blog-widget-area widget-area'>
+
+                                   
+                                    <div id="respond" class="comment-respond">
+                                                    <h3 id="reply-title" class="comment-reply-title">Our Services</h3>
+                                                    <ul class="list" style="list-style-type:none;">
+                                                    <li><a href="#">Website Design</a></li>
+                                                     <li><a href="#">Development</a></li>
+                                                      <li><a href="#">Web Application</a></li>
+                                                       <li><a href="#">Mobile Application</a></li>
+                                                        <li><a href="#">E-commerce Development</a></li>
+                                                         <li><a href="#">Portal Developmment</a></li>
+                                                          <li><a href="#">Computer Support</a></li>
+                                                          <%-- <li><a href="#"></a></li>
+                                                            <li><a href="#"></a></li>--%>
+                                                    </ul>
+                                                
+                                          </div>
+                                    <div id="tag_cloud-2" class="widget widget_tag_cloud">
+                                        <h6 class="widget_title">Tags</h6>
+                                        <div class="tagcloud">
+
+                                            <a href='#' class='tag-link-108 tag-link-position-1' title='5 topics' id="a_f795_0">Static website design </a>
+                                            <a href='#' class='tag-link-67 tag-link-position-2' title='13 topics' id="a_f795_1"> Dynamic Website Design </a>
+                                            <a href='#' class='tag-link-112 tag-link-position-3' title='8 topics' id="a_f795_2"> 
+Responsive website design </a>
+                                            <a href='#' class='tag-link-113 tag-link-position-4' title='8 topics' id="a_f795_3">Mobile Apps Development</a>
+                                            <a href='#' class='tag-link-109 tag-link-position-5' title='5 topics' id="a_f795_4">  
+E-commerce design Development
+</a>
+                                            <a href='#' class='tag-link-68 tag-link-position-6' title='10 topics' id="a_f795_5"> 
+Software Development</a>
+                                            <a href='#' class='tag-link-69 tag-link-position-7' title='8 topics' id="a_f795_6">  
+ASP.net Website
+</a>
+                                            <a href='#' class='tag-link-110 tag-link-position-8' title='5 topics' id="a_f795_7">  
+Website Design
+</a>
+                                            <a href='#' class='tag-link-70 tag-link-position-9' title='9 topics' id="a_f795_8">  
+Wordpress website
+</a>
+                                            <a href='#' class='tag-link-71 tag-link-position-10' title='10 topics' id="a_f795_9"> School management Software</a>
+                                            <a href='#' class='tag-link-72 tag-link-position-11' title='10 topics' id="a_f795_10">  
+Online Exam management Software
+</a>
+                                            <a href='#' class='tag-link-73 tag-link-position-12' title='11 topics' id="a_f795_11"> 
+Game parlour software </a>
+                                           </div>
+                                    </div>
+                                </aside>
+                            </aside>
+
+                        </div>
+                    </div>
+
+                </div>
+
+ 
+</asp:Content>
+

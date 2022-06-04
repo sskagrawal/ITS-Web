@@ -1,0 +1,239 @@
+﻿<%@ Page Title="Hire Employee" MetaDescription="Its Gwalior provide job post and hire employee according to your requirments" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="find-resumes.aspx.cs" Inherits="Job_find_resumes" %>
+
+<%@ Register src="../Controle/Newregistration.ascx" tagname="Newregistration" tagprefix="uc1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+
+    
+ 
+    <link href="../css/custom.css" rel="stylesheet" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+      <asp:HiddenField ID="hdfPlanID" runat="server"> </asp:HiddenField>
+    <asp:HiddenField ID="hdfpartyid" runat="server"> </asp:HiddenField>
+     <asp:HiddenField ID="hdfUserID" runat="server"> </asp:HiddenField>
+
+      <header class="rich-header page-header version1" data-parallax="true" id="header_4129_0">
+                    <div class="parallax-container" id="div_4129_0">&nbsp;</div>
+                    <div class="container nz-clearfix">
+                        <div class="rh-content">
+                            <h1 >Hire Employee</h1>
+                            <div class="rh-separator">&nbsp;</div>
+                            <div id="div_4129_1" class="nz-breadcrumbs nz-clearfix"><a href="index.html">Home</a></div>
+                        </div>
+                    </div>
+                    <div id="slider-arrow" data-target="#nz-target" data-from="90" data-offset="90" class="i-separator animate nz-clearfix"><i class="icon-arrow-down10"></i></div>
+                </header>
+                <div class="blog-layout-wrap list sidebar-false" id="nz-target">
+
+                    <div id="loop" class="loop">
+                        <div class="container nz-clearfix my-container">
+                           
+                            <section class="content lazy blog-layout nz-clearfix">
+                                <div class="blog-post blog-post-1 nz-clearfix">
+
+                                    
+
+                   <%  if (dt!=null && dt.Rows.Count > 0)
+                 {
+                   for (int i = 0; i <dt.Rows.Count; i = i+1)
+         
+                   {%>                   
+
+               <article data-grid="ninzio_01" class="detail" id="detail-195">
+                                        <div class="sp-thumbnail">
+
+
+                                            <%
+                        System.Data.DataTable dt2 = bind_ProfilePhoto(dt.Rows[i]["PartyID"].ToString());
+                        if(dt2!=null && dt2.Rows.Count > 0 && dt2.Rows[0]["Upload_File"].ToString()!=string.Empty)
+                        { %> 
+                        <img width="440" height="400" alt="client Photo"  src="../ClientContractDoc/<%=dt2.Rows[0]["Upload_File"].ToString()%>" class="attachment-Montserrat-Ninzio-Square size-Montserrat-Ninzio-Square wp-post-image"/>
+                                
+
+                      <% } %>
+
+                  <%  else { %>                          
+                    <img alt="client Photo" src="../images/dummy.jpg" />
+                   <%  }%>
+
+                                          
+                                       <%--     <img width="440" height="400" src="../upload/blog1-440x400.jpg" class="attachment-Montserrat-Ninzio-Square size-Montserrat-Ninzio-Square wp-post-image" alt="blog1" />--%>
+                                           
+                                            
+                                            
+                                             <div class="ninzio-overlay">
+                                                <a class="nz-overlay-before" title="View details" href="#"></a>
+                                            </div>
+                                        </div>
+                                        <div class="detail-body">
+                                            <div class="detail-body-in">
+                                              <%--  <span class="sticky-ind"></span>--%>
+
+
+                                                <%                                                   
+                                                    string t2 =dt.Rows[i]["job_Title"].ToString();
+                                                    int headingLength1 = t2.Length;
+                                                    if (headingLength1 > 45)
+                                                    {
+                                                        string str2 = t2.Substring(0, 45); %>
+             <h3 class="post-title"><a href="#" title="job Title" rel="bookmark"> <%=str2%>. [...]</a></h3>
+            
+                   
+               <% }
+   %>
+                                               
+
+             <% else
+    { %>
+            <h3 class="detail-title"><a href="#" title="job title" rel="bookmark"> <%= dt.Rows[i]["job_Title"].ToString()%></a></h3>
+             <%} %>
+
+
+
+                                              <%--  <h3 class="detail-title"><a href="#" title="job title" rel="bookmark"> <%= dt.Rows[i]["job_Title"].ToString()%></a></h3>--%>
+                                               
+                                                
+                                                 <div class="detail-date-full">
+                                                    <i class="fa fa-user" aria-hidden="true"></i> <span><%= dt.Rows[i]["Contact_person_name"].ToString()%></span>
+                                                     <%if (dt.Rows[i]["Exp"].ToString() != string.Empty)
+                                                        { %>
+                                                       <i class="fa fa-history" aria-hidden="true"></i>  <span>Exp:<%= dt.Rows[i]["Exp"].ToString()%></span>
+                                                    <%} %>
+
+                                                    <%else
+                                                  { %>
+                                                    <i class="fa fa-history" aria-hidden="true"></i>  <span>Experience:0 </span>
+                                                   <%} %>
+                                                     <i class="fa fa-inr"></i> <span>Price:  <%= dt.Rows[i]["Min_Salary"].ToString()%> </span>
+                                                     <i class="fa fa-map-marker"></i><span> City: <%= dt.Rows[i]["City"].ToString()%></span>
+                                                </div>
+
+
+
+
+
+
+                                               <%                                                   
+                                                   string t =dt.Rows[i]["ShortDescription"].ToString();
+                                                   int headingLength = t.Length;
+                                                   if (headingLength > 170)
+                                                   {
+                                                       string str1 = t.Substring(0, 170); %>
+
+             <%--  <div class="post-excerpt"><%=str1%>. [...]</div>--%>
+             <div class="post-excerpt text-left"><%=str1%> .... </div>
+                   
+               <% }
+    else
+    { %>
+                                                 <div class="post-excerpt text-left"><%= dt.Rows[i]["ShortDescription"].ToString() %></div>
+
+                                                <%} %>
+                                               
+                                               <%--  <div class="post-excerpt text-left"><%=dt.Rows[i]["ShortDescription"].ToString()%>. </div>--%>
+                                                
+                                                 <div class="many-skills">
+
+                                                   <%
+                    System.Data.DataTable dt3 = BindJobSkill(dt.Rows[i]["PartyID"].ToString());
+
+                    if (dt3!=null && dt3.Rows.Count > 0)
+                    { %> 
+                         <%for (int k = 0; k<dt3.Rows.Count; k = k + 1)
+                             { %>
+                            
+                        <a href="#"><%=dt3.Rows[k]["Skill_Name"].ToString()%></a>
+
+                             <%} %>                  
+
+                      <% } %>     
+
+
+
+                                                </div> 
+                                                <div class="clear"></div><br /><br />
+                                                <a class="detail-more" href="../Client_Panel/Client_profile_big.aspx?uTp=3&pId=<%=dt.Rows[i]["PartyID"].ToString() %>">Read more<span class="screen-reader-text">ITS Gwalior</span></a>
+                                            </div>
+                                        </div>
+                                    </article>
+
+                          <%  }
+                    }
+               %>
+
+
+
+
+
+
+                                    <%--<article data-grid="ninzio_01" class="detail" id="detail-195">
+                                        <div class="sp-thumbnail">
+                                            <div class="detail-category">
+                                                <ul class="detail-categories">
+                                                    <li><a href="#" rel="category tag">Design</a></li>
+                                                </ul>
+                                            </div><img width="440" height="400" src="../upload/blog1-440x400.jpg" class="attachment-Montserrat-Ninzio-Square size-Montserrat-Ninzio-Square wp-post-image" alt="blog1" />
+                                            <div class="ninzio-overlay">
+                                                <a class="nz-overlay-before" title="View details" href="#"></a>
+                                            </div>
+                                        </div>
+                                        <div class="detail-body">
+                                            <div class="detail-body-in">
+                                                <span class="sticky-ind"></span>
+                                                <h3 class="detail-title">
+                                                    <a href="#" title="Read more about Welcome to Responsive Retina-Ready WP Theme" rel="bookmark">
+                                                        Welcome to Responsive Retina-Ready WP Theme
+                                                    </a>
+                                                </h3>
+                                                <div class="detail-date-full">
+                                                    <span>8 Sep 2015</span>
+                                                    <span>2 hours ago</span>
+                                                    <span>Indore, India</span>
+                                                </div>
+                                                <div class="detail-excerpt">Who can forget the GIFs of the ‘90s, or the more up-to-date focus on flat design? Recently, we’ve seen a surge in popularity of responsive web design. [...]</div>
+                                                <div class="many-skills">
+                                                    <a href="#">HTML</a>
+                                                    <a href="#">CSS</a>
+                                                    <a href="#">JS</a>
+                                                    <a href="#">SASS</a>
+                                                    <a href="#">LESS</a>
+                                                </div>
+                                                <a class="detail-more" href="#">Read more<span class="screen-reader-text"> Welcome to Responsive Retina-Ready WP Theme</span></a>
+                                            </div>
+                                        </div>
+                                    </article>--%>
+
+                                    
+
+                                </div>
+                              <%--  <nav class=ninzio-navigation>
+                                    <ul class='page-numbers'>
+                                        <li><span class='page-numbers current'>1</span></li>
+                                        <li><a class='page-numbers' href='page/2/indexed65ed65.html?blog_layout=list'>2</a></li>
+                                        <li><a class="next page-numbers" href="page/2/indexed65ed65.html?blog_layout=list"><span class="icon icon-arrow-right8"></span></a></li>
+                                    </ul>
+                                </nav>--%>
+                            </section>
+
+
+                            
+                            <aside class="sidebar">
+
+                                  
+                                
+                                <uc1:Newregistration ID="Newregistration1" runat="server" />
+
+                                  
+                                
+                            </aside>
+
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+</asp:Content>
+

@@ -1,0 +1,194 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="WebEnquiryForm.ascx.cs" Inherits="Controle_WebEnquiryForm" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<style>
+    .popup1 {
+        background: #000000bf;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        min-width: 100%;
+        z-index: 99999999999;
+        min-height: 100%;
+        display:;
+        overflow:auto;
+        display:none;
+    }
+
+.frm1{
+    background: #fff;
+    width: 50%;
+    margin: auto;
+    margin-top: 40px;
+    min-height: auto;
+    padding: 60px 120px;
+    border-radius: 15px;
+    border-top: 5px solid #db6e5c;
+    border-bottom: 5px solid #db6e5c;
+     }
+.h2a{
+    font-size:23px;
+    padding-bottom: 19px;
+    color: #255ab4;
+    font-weight: 600;
+}
+
+label {
+    color:#000;
+}
+
+@media only screen and (max-width: 768px){
+
+
+.frm1 {
+    background: #fff;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    min-height: auto;
+    padding: 15px 10px;
+    border-radius: 15px;
+    border-top: 5px solid #db6e5c;
+    border-bottom: 5px solid #db6e5c;
+    height:500px;
+    overflow:auto;
+}
+
+.h2a{
+    font-size:18px !important;
+    padding-bottom: 19px;
+    color: #255ab4;
+    font-weight:600;
+}
+
+
+.popup1 {
+        background: #000000bf;
+        position: none;
+        top: none;
+        left: none;
+        width: 100%;
+        min-width: 100%;
+        z-index: 99999999999;
+        max-height: 100%;
+        display:;
+        overflow:scroll;
+        display:none;
+    }
+
+
+
+
+}
+</style>
+
+
+
+<div class="popup1">
+<div class="col-sm-6 frm1">
+<h2 class="h2a">Would you like us to call you back?
+<i class="fa fa-times-circle" id="timeicn1" aria-hidden="true" style="color:red; font-size:40px; float:right; cursor:pointer;"></i>
+</h2>
+<div>
+      <div class="alert alert-success alert-dismissable" id="divMsg" runat="server" visible="false">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                        &times;</button>&nbsp;
+                    <asp:Label ID="lblmsg" runat="server"></asp:Label>
+                </div>
+    </div>
+
+  <div class="form-group">
+    <label for="name">Full Name:</label>
+    <input type="text" runat="server" class="form-control" id="name">
+
+       <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="name"
+                                            ErrorMessage="Please Enter Name" ForeColor="Red" SetFocusOnError="True" ValidationGroup="sv"
+                                            Display="None">*</asp:RequiredFieldValidator>
+                                        
+                                             <asp:ValidatorCalloutExtender ID="RequiredFieldValidator3_ValidatorCalloutExtender" 
+                                            runat="server" Enabled="True" TargetControlID="rfvFullName" WarningIconImageUrl="img/wrning.gif">
+                                        </asp:ValidatorCalloutExtender> 
+
+  </div>
+
+  <div class="form-group">
+    <label>Mobile:</label>
+    <input type="text" runat="server"  class="form-control" id="mobile">
+
+      <asp:RequiredFieldValidator ID="rfvMobile" runat="server" ControlToValidate="mobile"
+                                            ErrorMessage="Please Enter Mobile No." ForeColor="Red" SetFocusOnError="True" ValidationGroup="sv"
+                                            Display="None">*</asp:RequiredFieldValidator>
+                                        
+                                             <asp:ValidatorCalloutExtender ID="RValloutExtender" 
+                                            runat="server" Enabled="True" TargetControlID="rfvMobile" WarningIconImageUrl="img/wrning.gif">
+
+                                                
+                                        </asp:ValidatorCalloutExtender>  
+
+
+
+
+  </div>
+
+  <div class="form-group">
+    <label>Email address:</label>
+    <input type="text" runat="server"  class="form-control" id="emailid">
+  </div>
+   
+   <div class="form-group">  
+       
+       <asp:DropDownList ID="drdService" runat="server">
+           <asp:ListItem Value="0" Selected="True">Select Service</asp:ListItem>
+           <asp:ListItem Value="Web Design">Web Design</asp:ListItem>
+            <asp:ListItem Value="Web Development">Web Development</asp:ListItem>
+            <asp:ListItem Value="Digital Marketing">Digital Marketing</asp:ListItem>
+            <asp:ListItem Value="Training">Training</asp:ListItem>
+       </asp:DropDownList>
+  </div>
+
+ 
+
+
+    <div class="form-group"> 
+
+        <div class="checkbox" style="text-align:center;">
+    <asp:Button ID="btnsubmit" runat="server" ValidationGroup="sv" OnClick="btnsubmit_Click" Text="submit" class="btn btn-default" style="height:50px; margin:auto;" />
+ 
+</div>
+
+        </div>
+
+      </div>
+           
+       
+    
+    
+  </div>
+
+
+
+<script>
+$(document).ready(function(){
+    $("#timeicn1").click(function () {
+        $(".popup1").fadeOut();
+  });
+});
+
+
+
+$(document).ready(function () {
+    $(".whatsaap-box2").click(function () {
+        $(".popup1").fadeIn();
+    });
+});
+
+
+$(document).ready(function () {
+    $("#btn11a").click(function () {
+        $(".popup1").fadeIn();
+    });
+});
+
+
+</script>

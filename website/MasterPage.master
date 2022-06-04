@@ -1,0 +1,649 @@
+﻿<!DOCTYPE html>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="Controle/DefaultMenu.ascx" TagName="DefaultMenu" TagPrefix="uc1" %>
+<%@ Register Src="Controle/UserMenu.ascx" TagName="UserMenu" TagPrefix="uc2" %>
+<%@ Register Src="Controle/JobSheekar.ascx" TagName="JobSheekar" TagPrefix="uc3" %>
+
+
+
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head runat="server">
+    <title>Web Design and Digital Marketing Company & Agency in Gwalior | ITS Gwalior</title>
+    <meta name="description" content="ITS Gwalior is one of the Best Web Design and Digital Marketing Company & Agency in Gwalior. We are Experts in Ads, Social Media Marketing, and SEO Services." />
+<meta name="keywords" content="seo services near me, digital marketing company in gwalior, seo service near me, software company in gwalior, web development company in gwalior, website design company in gwalior, seo company near me, seo company in gwalior, digital marketing course in gwalior, seo agency near me, web design company in gwalior, jobs in gwalior, website maker in gwalior, it companies in gwalior, local seo services near me, it company in gwalior, mobile app development company, digital marketing company in mp, website developer in gwalior, website designer in gwalior, web development gwalior, web design gwalior, graphics design, software companies in gwalior, ppc marketing, ppc advertisement, social media marketing, social media manager." />
+    <!-- META TAGS -->
+    <meta charset="UTF-8" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="iPTiiF4LA60TEL4dVBVArq2AOvtUZx8Eqnog-OsBTi4" />
+    <meta name="author" content="ITS Gwalior"/>
+    <link rel="alternate" hreflang="en-IN" href="https://www.itsgwalior.com/" />
+ 
+   
+    <meta name="city" content="Gwalior, Bhind, Morena, Datia, Shivpuri, Dabra, Dholpur, Ashoknagar, Guna, Sheopur, Lahar, Ambah and Porsa"/> 
+    <meta name="state" content="Madhya Pradesh, Utter Pradesh, Rajashthan"/> 
+ <meta name="country" content="India"/> 
+   
+  
+  
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132357479-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132357479-1');
+</script>
+
+
+
+    <!-- LINK TAGS -->
+    <link rel="pingback" href="xmlrpc.html" />
+    <link rel='stylesheet' href='css/new_style.css' media='all' />
+    <link rel='stylesheet' href='css/default.css'  media='all' />
+    <link rel='stylesheet' href='css/settings.css' media='all' />
+    <link rel='stylesheet' href='css/dynamic-styles.css'  media='all' />
+    <link rel='stylesheet' href='css/icomoon.css'  media='all' />
+    <link rel='stylesheet' href='css/header-im.css' media='all' />
+    <link rel='stylesheet' href='css/header-v6.css' media='all' />
+    <link rel='stylesheet' href='css/style.css' media='all' />
+    <link rel='stylesheet' href='css/js_composer.min.css' media='all' />
+
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface%7CMontserrat:300,400,500,600,700%7COpen+Sans:300,400,600,700,700i,800&amp;subset=latin-ext" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="its-image/favicon-32x32.webp" sizes="32x32" />
+     <link rel="apple-touch-icon" href="its-image/apple-icon-57x57.png" />
+     <link rel="apple-touch-icon" href="its-image/apple-icon-180x180.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/mastercss.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+	
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/56a34ef2d34bfee320ffcf63/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+   
+ <!--    Schema tag-->
+
+<!-- JSON-LD support -->
+   
+ <%--<script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+     "@graph":[{
+ "@type": "Best Web design and Digital Marketing Company",
+ "name": "Its Gwalior - Best Web design and Digital Marketing Company",
+"legalName":"Its Gwalior",
+"image":"https://itsgwalior.com/digital-marketing/digital-images/digital-marketing-services.webp",
+"url": "https://itsgwalior.com/",
+
+ "potentialAction": [{
+ "@type": "SearchAction",
+ "target": "https://itsgwalior.com/search?q={query}",
+ "query-input": "required name=query"
+ }],
+
+"sameAs": [{
+    "https://www.facebook.com/itssolutiongwalior",
+    "https://www.instagram.com/itsgwalior2012/",
+    "https://twitter.com/@ItsGwalior",
+     "https://its-gwalior.business.site/"
+    
+  }],
+   "contactPoint":[
+  	{"@type":"ContactPoint",
+     "telephone":"+91 89890-24130",
+     "contactType":"Webdesign and Digital Marketing Company"}
+  ],
+ "address":[ {
+ "@type": "PostalAddress",
+ "streetAddress": "15 Parsadi Pura behind of M.E.S. Power house Cantonment area Near 6 & 7 no. chauraha Morar",
+ "addressLocality": " Gwalior ",
+ "addressRegion": " (M.P.)",
+ "postalCode": "474006",
+ "addressCountry": "India"
+ }]
+     }]
+
+}
+ </script>--%>
+</head>
+<body class="archive post-type-archive post-type-archive-product woocommerce woocommerce-page wpb-js-composer js-comp-ver-4.12 vc_responsive ">
+    <form id="form1" runat="server">
+
+   
+           <script src='<%=ResolveClientUrl("js/jquery/jquery.js")%>'></script>
+        <asp:HiddenField ID="hdfpageName" runat="server" />
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div>
+            <!-- general wrap start -->
+            <div id="gen-wrap">
+
+                <uc1:DefaultMenu ID="DefaultMenu1" Visible="true" runat="server" />
+                <uc3:JobSheekar ID="JobSheekar1" Visible="false" runat="server" />
+             
+                <uc2:UserMenu ID="UserMenu1" Visible="false" runat="server" />
+
+                <div class="page-content-wrap">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <!-- footer start -->
+                    <footer class='footer'>
+                    <div class="footer-wa nz-clearfix">
+                        <div class="container">
+                            <aside class="footer-widget-area widget-area nz-clearfix">
+                                <div id="text-2" class="widget widget_text">
+                                    <div class="textwidget"><img id="img_df14_0" runat="server" src="~/upload/logo%209.png" alt="ITS Gwalior logo" title="ITS Logo">
+                                        <div class="gap nz-clearfix" id="div_df14_21">&nbsp;</div>
+                                        <span id="span_df14_17">We have Ten years of experience in IT Industry. Company delivered Best Web Design and Digital Marketing Services to the different purposes in All Industries. ITS Gwalior was Started on 15th January 2012 by Promoter Sandeep Kushwah. <a runat="server" href="~/about-us.aspx" style="color:#f0634c">Read More</a></span>
+                                        <div class="gap nz-clearfix" id="div_df14_22">&nbsp;</div>
+                                        <div class="nz-sl social-links nz-clearfix left">
+                                            <a rel="nofollow" class="icon-facebook" href="https://www.facebook.com/itssolutiongwalior" target="_blank" title="ITS Gwalior at Facebook"></a>
+                                            <a rel="nofollow" class="icon-youtube" href="https://www.youtube.com/channel/UCx6ndetuHvV60qLpa2N8qVw" target="_blank" title="ITS Gwalior at Youtube"></a>
+                                            <a rel="nofollow" class="icon-twitter" href="https://twitter.com/ItsGwalior/" target="_blank" title="ITS Gwalior at Twitter"></a>
+                                            <a rel="nofollow" class="icon-googleplus" href="https://its-gwalior.business.site/" target="_blank" title="ITS Gwalior at Google My Business"></a>
+                                            <a rel="nofollow" class="icon-Justdial" href="https://www.justdial.com/gwalior/Muki-Technologies-Pvt-Ltd-Morar/9999PX751-X751-140216122641-H8J5_BZDET" title="ITS Gwalior at Justdail" target="_blank"><span>Jd</span> </a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div id="text-3" class="widget widget_text">
+                                    <h6 class="widget_title">Our information</h6>
+                                    <div class="textwidget">
+                                        <div class="nz-clearfix">
+                                            <ul id="ul_df14_">
+                                                <li><a href="~/Company/terms-conditions.aspx" runat="server">Terms & Conditions</a></li>
+                                                <li><a href="~/Company/privacy-policy.aspx" runat="server">Privacy Policy</a></li>
+                                                <%--<li><a href="~/Company/return-exchange.aspx" runat="server">Return & Exchange</a></li>--%>
+                                                <li><a href="~/Company/refund-cancellation.aspx" runat="server">Refund & Cancellation</a></li>
+                                             <%--   <li><a href="#">Rules and Regulation</a></li>--%>
+                                                <li><a href="~/Company/disclaimer.aspx" runat="server"> Disclaimer</a></li>
+                                                <li><a href="~/about-us.aspx" runat="server">About Us</a></li>
+                                                <li><a href="ClientContract.aspx" runat="server">Client Memorandom</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                 
+                                <div id="nz-recent-posts-5" class="widget widget_text">
+                                    <h6 class="widget_title">Contact Detail</h6>
+                                    <ul style="list-style:none;">
+
+                                         <li class="post-195 post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-eva tag-external tag-free tag-logo tag-repairing tag-shopping tag-smart">
+                                            <div class="post-body">
+                                                
+                                                <div class="post-date" style="color:white;"><strong>Address</strong></div>
+                                              <a class="post-title" href="#">G2 karuna Enclave, Patel Nagar, City Center Gwalior, Madhya Pradesh 474011
+                                                 <br />
+                                                 <br />
+                                                 
+                                              </a>
+                                                 <div class="post-date" style="color:white;"><strong>Mobile No</strong></div>
+                                              <a class="post-title" href="tel:8989024130">
+                                                   +91 89890-24130,
+                                                  </a>
+                                                <a class="post-title" href="tel:9131722185">
+                                                   +91 9131722185
+                                                  </a>
+                                                <div class="post-date" style="color:white;"><strong>E-Mail</strong></div>
+                                              <a class="post-title" href="mailto:its.gwl15@gmail.com">
+                                                   its.gwl15@gmail.com
+                                                  </a>
+                                                 <a class="post-title" href="mailto: info@itsgwalior.com"> info@itsgwalior.com </a>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                               <div id="text-4" class="widget widget_text">
+
+
+                                    <h6 class="widget_title">Payment Detail</h6>
+                                    <ul class="instagram-pics instagram-size-thumbnail" style="list-style:none;">
+
+                                        <li class="post-195 post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-eva tag-external tag-free tag-logo tag-repairing tag-shopping tag-smart">
+                                            <div class="post-body">
+                                                
+                                                <div class="post-date" style="color:white;"><strong>Account Detail</strong></div>
+                                               <a class="post-title" href="#">ITS GWALIOR<br />
+                                                945420110000297<br />
+                                                Bank of India<br />
+                                                IFSC: BKID0009454</a>
+                                            </div>
+                                        </li>
+
+                                        <li class="post-194 post type-post status-publish format-aside has-post-thumbnail hentry category-marketing tag-design tag-eva tag-external tag-logo tag-marketing tag-ninzio-style tag-painting tag-smart post_format-post-format-aside">
+                                            <div class="post-body">
+                                                <div class="post-date" style="color:white;"><strong>Google Pay, Phonepe No.</strong></div>
+                                                <a class="post-title" href="#" style="cursor:default">+91 8989024130</a>
+                                            </div>
+                                        </li>
+                                         <li class="post-194 post type-post status-publish format-aside has-post-thumbnail hentry category-marketing tag-design tag-eva tag-external tag-logo tag-marketing tag-ninzio-style tag-painting tag-smart post_format-post-format-aside">
+                                            <div class="post-body">
+                                                <div class="post-date" style="color:white;"><strong><a class="post-title" runat="server" href="online-payment-registration.aspx">Online Payment Here</a></strong></div>
+                                            </div>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                    <div  class="footer-info-area nz-clearfix">
+                        <div class="container">
+                            <div style="float: none; text-align:center;" class="footer-copyright nz-clearfix">
+                                <span id="span_df14_18">© 2012 - 2022 <a href="https://www.itsgwalior.com/" target="_blank" rel="dofollow"> ITS Gwalior</a>| All Rights Reserved</span> </div>
+                        </div>
+                    </div>
+                </footer>
+                    <!-- footer end -->
+                </div>
+            </div>
+            <!-- wrap end -->
+
+            <a id="top" href="#wrap"></a>
+
+        </div>
+
+
+    
+    <!-- general wrap end -->
+
+
+
+ 
+    <script defer src='<%=ResolveClientUrl("js/jquery/jquery-migrate.min.js")%>'></script>
+    <script defer src='<%=ResolveClientUrl("js/jquery.blockUI.min.js")%>'></script>
+    <script defer src='<%=ResolveClientUrl("js/woocommerce.min.js")%>'></script>
+    <script defer src='<%=ResolveClientUrl("js/smoothscroll.js")%>'></script>
+    <script defer src='<%=ResolveClientUrl("js/isotope.pkgd.min.js")%>'></script>
+    <script defer src='<%=ResolveClientUrl("js/plugins.js")%>'></script>
+    <script defer src='<%=ResolveClientUrl("js/controller.js")%>'></script>
+
+    <script defer src='<%=ResolveClientUrl("js/contact-form.js")%>'></script>
+    <script defer src='<%=ResolveClientUrl("js/js_composer_front.min.js")%>'></script>
+
+    <script defer src='<%=ResolveClientUrl("js/jquery.themepunch.tools.min.js")%>'></script>
+    <script defer src='<%=ResolveClientUrl("js/jquery.themepunch.revolution.min.js")%>'></script>
+    <script defer src="<%=ResolveClientUrl("js/extensions/revolution.extension.slideanims.min.js")%>"></script>
+    <script defer src="<%=ResolveClientUrl("js/extensions/revolution.extension.layeranimation.min.js")%>"></script>
+    <script defer src="<%=ResolveClientUrl("js/extensions/revolution.extension.navigation.min.js")%>"></script>
+    <script defer src="<%=ResolveClientUrl("js/extensions/revolution.extension.actions.min.js")%>"></script>
+    <script defer src="<%=ResolveClientUrl("js/extensions/revolution.extension.carousel.min.js")%>"></script>
+    <script defer src="<%=ResolveClientUrl("js/extensions/revolution.extension.kenburn.min.js")%>"></script>
+    <script defer src="<%=ResolveClientUrl("js/extensions/revolution.extension.migration.min.js")%>"></script>
+    <script defer src="<%=ResolveClientUrl("js/extensions/revolution.extension.parallax.min.js")%>"></script>
+    <script defer src="<%=ResolveClientUrl("js/extensions/revolution.extension.video.min.js")%>"></script>
+
+    <script type="text/javascript">
+        /******************************************
+                        -   PREPARE PLACEHOLDER FOR SLIDER  -
+                    ******************************************/
+
+        var setREVStartSize = function() {
+            try {
+                var e = new Object,
+                    i = jQuery(window).width(),
+                    t = 9999,
+                    r = 0,
+                    n = 0,
+                    l = 0,
+                    f = 0,
+                    s = 0,
+                    h = 0;
+                e.c = jQuery('#rev_slider_1_1');
+                e.responsiveLevels = [1240, 1024, 778, 480];
+                e.gridwidth = [1170, 960, 720, 440];
+                e.gridheight = [650, 650, 650, 400];
+
+                e.sliderLayout = "fullscreen";
+                e.fullScreenAutoWidth = 'off';
+                e.fullScreenAlignForce = 'off';
+                e.fullScreenOffsetContainer = '';
+                e.fullScreenOffset = '';
+                if (e.responsiveLevels && (jQuery.each(e.responsiveLevels, function(e, f) {
+                        f > i && (t = r = f, l = e), i > f && f > r && (r = f, n = e)
+                    }), t > r && (l = n)), f = e.gridheight[l] || e.gridheight[0] || e.gridheight, s = e.gridwidth[l] || e.gridwidth[0] || e.gridwidth, h = i / s, h = h > 1 ? 1 : h, f = Math.round(h * f), "fullscreen" == e.sliderLayout) {
+                    var u = (e.c.width(), jQuery(window).height());
+                    if (void 0 != e.fullScreenOffsetContainer) {
+                        var c = e.fullScreenOffsetContainer.split(",");
+                        if (c) jQuery.each(c, function(e, i) {
+                            u = jQuery(i).length > 0 ? u - jQuery(i).outerHeight(!0) : u
+                        }), e.fullScreenOffset.split("%").length > 1 && void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 ? u -= jQuery(window).height() * parseInt(e.fullScreenOffset, 0) / 100 : void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 && (u -= parseInt(e.fullScreenOffset, 0))
+                    }
+                    f = u
+                } else void 0 != e.minHeight && f < e.minHeight && (f = e.minHeight);
+                e.c.closest(".rev_slider_wrapper").css({
+                    height: f
+                })
+
+            } catch (d) {
+                console.log("Failure at Presize of Slider:" + d)
+            }
+        };
+
+        setREVStartSize();
+
+        var tpj = jQuery;
+
+        var revapi1;
+        tpj(document).ready(function() {
+            if (tpj("#rev_slider_1_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_1_1");
+            } else {
+                revapi1 = tpj("#rev_slider_1_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "js/",
+                    sliderLayout: "fullscreen",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        keyboardNavigation: "on",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        mouseScrollReverse: "default",
+                        onHoverStop: "on",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "custom",
+                            enable: true,
+                            hide_onmobile: true,
+                            hide_under: 768,
+                            hide_onleave: true,
+                            hide_delay: 200,
+                            hide_delay_mobile: 1200,
+                            tmp: '',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 0,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 0,
+                                v_offset: 0
+                            }
+                        },
+                        bullets: {
+                            enable: true,
+                            hide_onmobile: true,
+                            hide_under: 640,
+                            style: "custom",
+                            hide_onleave: true,
+                            hide_delay: 200,
+                            hide_delay_mobile: 1200,
+                            direction: "horizontal",
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 30,
+                            space: 12,
+                            tmp: ''
+                        }
+                    },
+                    responsiveLevels: [1240, 1024, 778, 480],
+                    visibilityLevels: [1240, 1024, 778, 480],
+                    gridwidth: [1170, 960, 720, 440],
+                    gridheight: [650, 650, 650, 400],
+                    lazyType: "none",
+                    parallax: {
+                        type: "mouse",
+                        origo: "enterpoint",
+                        speed: 400,
+                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 55],
+                        type: "mouse",
+                        disable_onmobile: "on"
+                    },
+                    shadow: 0,
+                    spinner: "spinner5",
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    fullScreenAutoWidth: "off",
+                    fullScreenAlignForce: "off",
+                    fullScreenOffsetContainer: "",
+                    fullScreenOffset: "",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+        }); /*ready*/
+    </script>
+    <div class="whatsaap-box">
+        <div class="number text-center" id="number" style="display: none;">
+            <a href="https://api.whatsapp.com/send?phone=918989024130" class="external" rel="dofollow"
+                target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i>+91-8989024130</a>
+        </div>
+        <a class="whatsapp" href="#">
+            <img alt="whatsapp" title="whatsapp" runat="server" src="~/its-image/small-images/whatsapp-icon.png" style="width: 50px; height: 50px; margin-top: 8px;">
+        </a>
+    </div>
+
+    <!--whatsaap-->
+    <script>
+        jQuery(document).ready(function () {
+            jQuery(".number").hide();
+            jQuery(".whatsapp").click(function () {
+                jQuery(".number").toggle("slide");
+            });
+        });
+    </script>
+
+    <!--call-->
+    <div class="whatsaap-box1">
+        <div class="number1 text-center" id="number1" style="display: none;">
+            <a href="tel:8989024130" class="external" rel="dofollow"
+                target="_blank"><i class="fa fa-phone" aria-hidden="true"></i>+91-8989024130</a>
+        </div>
+        <a class="whatsapp1" href="#">
+            <img alt="callus" title="call us" runat="server" src="~/its-image/small-images/phone-new.webp" id="clk1" style="width: 50px; height: 50px; margin-top: 8px;">
+        </a>
+    </div>
+
+    <script>
+        jQuery(document).ready(function () {
+            jQuery(".number1").hide();
+            jQuery(".whatsapp1").click(function () {
+                jQuery(".number1").toggle("slide");
+            });
+        });
+    </script>
+
+    <!--equery-->
+  <%--  <div class="whatsaap-box2">
+        <a class="whatsapp2" runat="server" href="~/contact-us.aspx">
+            <img alt="call back enquiry" title="call back enquiry" id="clk1a" runat="server" src="~/its-image/small-images/email-new.webp" style="width: 50px; height: 50px; margin-top: 8px;">
+        </a>
+    </div>--%>
+          <div class="whatsaap-box2">
+        <a class="whatsapp2" runat="server" href="~/shop/Cart.aspx">
+            <img alt="My Cart" title="My Cart" id="clk1a" runat="server" src="images/cart.png" style="width: 40px; height: 40px !important; margin-top: 12px; position:relative;">
+            <span id="cart_num1">0</span>
+        </a>
+    </div>
+
+
+<!--popup Box-->
+<%--<div class="popup1">
+<div class="col-sm-6 frm1">
+<h2 class="h2a">Would you like us to call you back?
+<i class="fa fa-times-circle" id="timeicn1" aria-hidden="true" style="color:red; font-size:40px; float:right; cursor:pointer;"></i>
+</h2>
+<div>
+      <div class="alert alert-success alert-dismissable" id="divMsg" runat="server" visible="false">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                        &times;</button>&nbsp;
+                    <asp:Label ID="lblmsg" runat="server"></asp:Label>
+                </div>
+    </div>
+
+  <div class="form-group">
+    <label for="name">Full Name:</label>
+    <input type="text" runat="server" class="form-control" id="name">
+
+       <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="name"
+                                            ErrorMessage="Please Enter Name" ForeColor="Red" SetFocusOnError="True" ValidationGroup="sv"
+                                            Display="None">*</asp:RequiredFieldValidator>
+                                        
+                                             <asp:ValidatorCalloutExtender ID="RequiredFieldValidator3_ValidatorCalloutExtender" 
+                                            runat="server" Enabled="True" TargetControlID="rfvFullName" WarningIconImageUrl="img/wrning.gif">
+                                        </asp:ValidatorCalloutExtender> 
+
+  </div>
+
+  <div class="form-group">
+    <label>Mobile:</label>
+    <input type="text" runat="server"  class="form-control" id="mobile">
+
+      <asp:RequiredFieldValidator ID="rfvMobile" runat="server" ControlToValidate="mobile"
+                                            ErrorMessage="Please Enter Mobile No." ForeColor="Red" SetFocusOnError="True" ValidationGroup="sv"
+                                            Display="None">*</asp:RequiredFieldValidator>
+                                        
+                                             <asp:ValidatorCalloutExtender ID="RValloutExtender" 
+                                            runat="server" Enabled="True" TargetControlID="rfvMobile" WarningIconImageUrl="img/wrning.gif">
+
+                                                
+                                        </asp:ValidatorCalloutExtender>  
+
+
+
+
+  </div>
+
+  <div class="form-group">
+    <label>Email address:</label>
+    <input type="text" runat="server"  class="form-control" id="emailid">
+  </div>
+   
+   <div class="form-group">  
+       
+       <asp:DropDownList ID="drdService" runat="server">
+           <asp:ListItem Value="0" Selected="True">Select Service</asp:ListItem>
+           <asp:ListItem Value="Web Design">Web Design</asp:ListItem>
+            <asp:ListItem Value="Web Development">Web Development</asp:ListItem>
+            <asp:ListItem Value="Digital Marketing">Digital Marketing</asp:ListItem>
+            <asp:ListItem Value="Training">Training</asp:ListItem>
+       </asp:DropDownList>
+  </div>
+
+  <div class="form-group">  
+      <label>  Please Answer this question: 6 + 3 =</label>
+      <input type="text" runat="server" id="txtAdfdgf" />
+       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAdfdgf"
+                                            ErrorMessage="Please Enter Answer" ForeColor="Red" SetFocusOnError="True" ValidationGroup="sv"
+                                            Display="None">*</asp:RequiredFieldValidator>
+                                        
+                                             <asp:ValidatorCalloutExtender ID="ValidatorCalloutExtender1" 
+                                            runat="server" Enabled="True" TargetControlID="RequiredFieldValidator1" WarningIconImageUrl="img/wrning.gif">
+
+                                                
+                                        </asp:ValidatorCalloutExtender>  
+      </div>
+
+
+    <div class="form-group"> 
+
+        <div class="checkbox" style="text-align:center;">
+    <asp:Button ID="btnsubmit" runat="server" ValidationGroup="sv" OnClick="btnsubmit_Click" Text="submit" CssClass="btn btn-default" style="height:50px; margin:auto;" />
+ 
+</div>
+
+        </div>
+
+      </div>
+           
+       
+    
+    
+  </div>--%>
+
+
+
+
+</form>
+<%--</form>
+</div>
+</div>--%>
+
+
+
+<script>
+    jQuery(document).ready(function () {
+        jQuery("#timeicn1").click(function () {
+            jQuery(".popup1").fadeOut();
+  });
+});
+
+
+
+//$(document).ready(function () {
+//    $(".whatsaap-box2").click(function () {
+//        $(".popup1").fadeIn();
+//    });
+//});
+
+
+//$(document).ready(function () {
+//    $("#btn11a").click(function () {
+//        $(".popup1").fadeIn();
+//    });
+//});
+
+
+</script>
+   
+     <script src="<%= ResolveClientUrl("~/js/bootstrap-notify.min.js")%>"></script>
+    <script src="<%= ResolveClientUrl("~/js/ShopCart.js")%>"></script>
+      <script type="text/javascript">
+          jQuery(function () {
+
+
+              ShopCartItem();
+              //FillShopCart();
+
+          });
+
+      </script>   
+
+
+</body>
+
+</html>

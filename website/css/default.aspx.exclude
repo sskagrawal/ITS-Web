@@ -1,0 +1,556 @@
+﻿
+<%@ Page Title="Best Webdesign | Digital Marketing | Software It Company in Gwalior" MetaKeywords="Best Webdesign Company, Best Digital Marketing Company, Best Software Company, It Company, Graphics Design Company, Website Development Company in Gwalior, Madhya Pradesh India." MetaDescription="Its Gwalior is one of the Best Webdesign, Digital Marketing, Graphics Design and also Software It Company in Gwalior, Madhya Pradesh India."  Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="default.aspx.cs" Inherits="_Default" %>
+
+
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+     <link rel="canonical" href="https://itsgwalior.com/default" />
+    <link href="css/homeCss.css" rel="stylesheet" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+   <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container" style="background-color:#333333;padding:0px;background-image:url(upload/slider_pattern-1.png);background-repeat:repeat;background-position:left top;">
+                   <%--background-size:normal--%> 
+
+
+
+       <!-- START REVOLUTION SLIDER 5.2.6 fullscreen mode -->
+
+                    <div id="rev_slider_1_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.2.6">
+                        <ul>
+                            <!-- SLIDE  -->    
+                            
+                           
+                     <% if (DtSlider != null && DtSlider.Rows.Count > 0)
+                         {
+                             int count = 1;
+                             foreach (System.Data.DataRow row in DtSlider.Rows)
+                             {
+
+                         %>
+                                                   
+
+                            <li data-index="rs-3" data-transition="slideleft" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="upload/slider/slider_bg1-1.jpg" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-saveperformance="off" data-title="Slide 1" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                                <!-- MAIN IMAGE -->
+                                <img src="SliderImage/<%=row["SliderImg"]%>" alt="<%=row["SliderTitle"]%>" title="slider_bg1" width="1920" height="1080" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina />
+                                <!-- LAYERS -->
+
+                                <!-- LAYER NR. 1 -->
+                                <div class="tp-caption tp-layer-selectable  tp-resizeme" id="slide-4-layer-<%=count %>" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-20','-20','-20','-80']" data-fontsize="['72','72','60','36']" data-lineheight="['84','84','70','46']" data-width="['1170','1170','778','480']" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:50px;opacity:0;s:300;e:Power3.easeOut;" data-transform_out="y:50px;opacity:0;s:300;e:Power3.easeOut;" data-start="900" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; min-width: 1170px; max-width: 1170px; white-space: normal; font-size: 72px; line-height: 84px; font-weight: 700; color: rgba(255, 255, 255, 1.00);font-family:Montserrat;text-align:center;"><%=row["SliderTitle"]%></div>
+
+                                <!-- LAYER NR. 2 -->
+                                <div class="tp-caption tp-layer-selectable  tp-resizeme" id="slide-4-layer-2<%=count %>" data-x="['center','center','center','center']" data-hoffset="['2','2','2','2']" data-y="['middle','middle','middle','middle']" data-voffset="['90','90','80','4']" data-width="['918','918','918','402']" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:50px;opacity:0;s:300;e:Power3.easeOut;" data-transform_out="y:50px;opacity:0;s:300;e:Power3.easeOut;" data-start="1050" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 6; min-width: 918px; max-width: 918px; white-space: normal; font-size: 24px; line-height: 34px; font-weight: 300; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;text-align:center;"><%=row["Slider_SubTitle"]%></div>
+                                                              
+                            </li> 
+
+                             <%
+                                         count++;
+                                     }
+                                 }
+                     %>
+                          
+                        </ul>
+
+                        <div class="tp-bannertimer" style="height: 5px; background-color: rgba(255, 255, 255, 0.15);"></div>
+                    </div>
+
+                </div>
+                <!-- END REVOLUTION SLIDER -->
+<%--          class="nz-section horizontal autoheight-false animate-false full-width-false " data-animation-speed="35000" data-parallax="false"--%>
+                 <div id="div_7e0b_1" class="nz-section horizontal autoheight-false animate-false full-width-false ">
+                                    <div class="container">
+                                        <div class="nz-row">
+                                            <div class="col vc_col-sm-12 vc_col-lg-3 vc_col-md-2 vc_col-xs-12 col12  element-animate-false valign-top"  data-effect="none" data-align="center" data-margin="false">
+                                                <div class="col-inner" ></div>
+                                            </div>
+                                            <div class="col vc_col-sm-12 vc_col-lg-12 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"  data-effect="none" data-align="left" data-margin="false">
+                                                <div class="col-inner" >
+                                                    <h1 class="vc_custom_heading ninzio-latter-spacing " id="h3_7e0b_0">Webdesign Company</h1>
+                                                    <div class="sep-wrap element-animate element-animate-false center nz-clearfix" data-effect="none">
+                                                        <div class="nz-separator solid " id="div_7e0b_22">&nbsp;</div>
+                                                    </div>
+                                                    <div  class="nz-column-text nz-clearfix no-padding element-animate-false" data-effect="none" data-effect-speed="50">
+                                                        
+                                                        <p class="p_7e0b_3"><span class="span_7e0b_3">ITS Gwalior is the <strong> Best Webdesign Company</strong> in Gwalior. <strong>ITS Gwalior</strong> has Nine Years Experience in IT Services. Company Delivered <strong>Best Webdesign</strong> services.  You are looking <strong> Best Webdesign Company </strong>in Gwalior with 100% Satisfaction.  <strong>ITS Gwalior</strong> has Professional and Experienced <strong>Web Designers, UI UX Designers</strong> with fully Satisfaction Services. You can see our work below and for more information <a href="portfolio.aspx">Click Here</a>. If you want to know more about <strong>ITS Gwalior</strong> <a href="about-us.aspx">Click Here.</a>  </span></p>
+                                                        <p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col vc_col-sm-12 vc_col-lg-3 vc_col-md-2 vc_col-xs-12 col12  element-animate-false valign-top"  data-effect="none" data-align="left" data-margin="false">
+                                                <div class="col-inner" ></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="nz-section horizontal autoheight-false animate-false full-width-true custom-slick-dots" data-animation-speed="35000" data-parallax="false" id="div_7e0b_3">
+                                    <div class="nz-row">
+                                        <div class="col vc_col-sm-12 col12  element-animate-false valign-top"  data-effect="none" data-align="left">
+                                            <div class="col-inner" >
+                                                <div id="nz-slick-carousel-1" class="lazy nz-clearfix nz-slick-carousel" data-autoplayspeed="9000" data-autoplay="true">
+                                                  
+
+                                                    <% if (DtSubSlider != null && DtSubSlider.Rows.Count > 0)
+                                                        {
+                                                            foreach (System.Data.DataRow row in DtSubSlider.Rows)
+                                                            {
+                                                             %>
+                                   
+       
+                                                    <div class="nz-slick-item nz-clearfix"><a href="<%=row["WebUrl"] %>" target="_blank"><img class="aligncenter size-full wp-image-4828" src="SubSliderImage/<%=row["SubSliderImage"]%>" alt="web designing company in gwalior" width="870" height="570"  /></a></div>
+                                                  
+                                                    <%--<div class="nz-slick-item nz-clearfix"><a href="#" target="_blank"><img class="aligncenter size-full wp-image-4820" src="upload/big-image/nws.jpg" alt="web development company in gwalior" width="870" height="570"  /></a></div>
+                                                    <div class="nz-slick-item nz-clearfix"><a href="#" target="_blank"><img class="aligncenter size-full wp-image-4827" src="upload/big-image/cafe2.jpg" alt="Wordpress website design compony in gwalior " width="870" height="570"  /></a></div>
+                                                    <div class="nz-slick-item nz-clearfix"><a href="#" target="_blank"><img class="aligncenter size-full wp-image-4828" src="upload/big-image/sics-india.jpg" alt="Dynamic Website design company in gwalior" width="870" height="570"  /></a></div>
+                                                    <div class="nz-slick-item nz-clearfix"><a href="#" target="_blank"><img class="aligncenter size-full wp-image-4820" src="upload/big-image/arkansohar.jpg" alt="industrial transport website design company in Gwalior" width="870" height="570"  /></a></div>--%>
+                                                                 <%
+                                                        }
+                                                       }
+                                                         %>
+                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                  <div id="div_df14_17">
+                                    <div id="div_df14_18" class="fixed-container"></div>
+                                    <div class="container">
+                                        <div class="nz-row">
+                                            <div class="col vc_col-sm-12 vc_col-lg-3 vc_col-md-2 vc_col-xs-12 col12  element-animate-false valign-top"  data-effect="none" data-align="left">
+                                                <div class="col-inner" ></div>
+                                            </div>
+                                            <div class="col vc_col-sm-12 vc_col-lg-12 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"  data-effect="none" data-align="left" data-margin="false">
+                                                <div class="col-inner" >
+                                                    <h1 id="h3_df14_2" class="vc_custom_heading ninzio-latter-spacing">Software It company</h1>
+                                                    <div class="sep-wrap element-animate element-animate-false center nz-clearfix" data-effect="none">
+                                                        <div class="nz-separator solid" id="div_df14_19">&nbsp;</div>
+                                                    </div>
+                                                    <div  class="nz-column-text nz-clearfix no-padding element-animate-false" data-effect="none" data-effect-speed="50">
+                                                        
+                                                        <p id="p_df14_2"><span id="span_df14_15"><strong>ITS Gwalior</strong> is a <strong>Software It company </strong>in Gwalior. <strong>ITS Gwalior</strong> is the <strong>Best IT – Services Company </strong>in Gwalior. We are expert in <strong>IT – services</strong> like <strong>Design</strong>, <strong>Development</strong>, <strong>Digital Marketing</strong>, <strong>Affiliate Marketing</strong>, <strong>IT Courses</strong>, <strong>Bulk SMS</strong>, <strong>Domain Hosting</strong> and <strong>Jobs</strong>. Design is the best part of <strong>Webdesign</strong>,<strong> Graphics Design</strong>, <strong>UI UX Design</strong> and <strong>PPT Design</strong>. <strong>Software IT company</strong> develop<strong> Software Development</strong>, <strong>Web Application</strong>,<strong> Web Development</strong>,<strong> Website Development</strong>, <strong> Mobile App Development</strong>,<strong> Web Portal</strong> and <strong>E-Commerce Development</strong>. If you are seeking good ranking in Google, you can try(/hire)  our <strong>Digital Marketing</strong> Services. Our <strong>Digital Marketing</strong> Services are <strong>SEO Services, Social Media Manager, Google Digital Marketing and PPC Marketing</strong>. We Provide <strong>Video Making</strong> Services Slide Show Video, Social Media Video, Testimonial Video, Aniversary Video and invitation card design Video in India. Our Production House Name is DG ( Digital Generation) Production House. More Services Details are given below: </span></p>
+                                                        <p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col vc_col-sm-12 vc_col-lg-3 vc_col-md-2 vc_col-xs-12 col12  element-animate-false valign-top"  data-effect="none" data-align="left" data-margin="false">
+                                                <div class="col-inner" ></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="nz-section horizontal autoheight-false animate-false full-width-false custom-posts-top-alignment" data-animation-speed="35000" data-parallax="false" id="div_df14_20">
+                                    <div class="container">
+                                        <div class="nz-row">
+                                            <div class="col vc_col-sm-12 col12  element-animate-false valign-top"  data-effect="none" data-align="left">
+                                                <div class="col-inner" >
+                                                    <div id="nz-recent-posts-1" data-autoplay="false" data-columns="3" class="lazy nz-recent-posts nz-clearfix animate-false" data-animate="true">
+                                                        <div class="post item format- nz-clearfix" data-grid="ninzio_01">
+                                                            <div class="nz-thumbnail">
+                                                                <div class="post-category">
+                                                                    <ul class="post-categories">
+                                                                        <li><h3><a href="it-services/design-company-in-gwalior.aspx" rel="category tag" title="design Company in Gwalior">Design</a></h3></li>
+                                                                    </ul>
+                                                                </div><img src="its-image/small-images/it-company/Design-new.webp" class="attachment-Montserrat-Ninzio-Half size-Montserrat-Ninzio-Half wp-post-image" alt="design"/><span class="sticky-ind">Offer</span>
+                                                                <div class="ninzio-overlay">
+                                                                    <a class="nz-overlay-before" title="View More" href="it-services/design-company-in-gwalior.aspx"></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="post-body"> 
+                                                                <div class="post-body-in">
+                                                                    <h2 class="post-title"><a href="it-services/design-company-in-gwalior.aspx" title="design Company in Gwalior" rel="bookmark">Design</a></h2>
+                                                                 
+                                                                    <div class="post-excerpt">India is moving on digitally with big changes so you will need our <strong>Design </strong>Company. Because it is very necessary for your business growth .</div><br>
+                                                                    <a class="post-more" href="it-services/design-company-in-gwalior.aspx" title="design Company in Gwalior"> Read more<span class="screen-reader-text" title="design Company in Gwalior">Design Company in Gwalior</span></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="post item format-aside nz-clearfix" data-grid="ninzio_01">
+                                                            <div class="nz-thumbnail">
+                                                                <div class="post-category">
+                                                                    <ul class="post-categories">
+                                                                        <li><h3><a href="it-services/web-development-company-in-gwalior.aspx" rel="category tag" title="development Company in Gwalior">Development</a></h3></li>
+                                                                    </ul>
+                                                                </div><img src="its-image/small-images/it-company/development.webp" class="attachment-Montserrat-Ninzio-Half size-Montserrat-Ninzio-Half wp-post-image" alt="development Company in Gwalior" />
+                                                                <div class="ninzio-overlay">
+                                                                    <a class="nz-overlay-before" title="View More" href="it-services/web-development-company-in-gwalior.aspx"></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="post-body">
+                                                                <div class="post-body-in">
+                                                                    <h2 class="post-title"><a href="it-services/web-development-company-in-gwalior.aspx" title="Development Company in Gwalior" rel="bookmark">Development</a></h2>
+                                                                    
+                                                                    <div class="post-excerpt">Our <strong>Developmenet</strong> company  develop CMS website, e-commerce website, web portal, custom software and mobile app according your need. Our <strong>development</strong> team provide 100% satisfaction in services.</div><br>
+                                                                    <a class="post-more" href="it-services/web-development-company-in-gwalior.aspx" title="Development Company in Gwalior">Read more<span class="screen-reader-text">Development Company in Gwalior</span></a></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="post item format-audio nz-clearfix" data-grid="ninzio_01">
+                                                            <div class="nz-thumbnail">
+                                                                <div class="post-category">
+                                                                    <ul class="post-categories">
+                                                                        <li><h3><a href="it-services/digital-marketing-in-gwalior.aspx" rel="category tag" title="Digital-Marketing Company in Gwalior">Digital-Marketing</a></h3></li>
+                                                                    </ul>
+                                                                </div><img  src="its-image/small-images/it-company/digital-marketing.webp" class="attachment-Montserrat-Ninzio-Half size-Montserrat-Ninzio-Half wp-post-image" alt="Digital-Marketing Company in Gwalior" /><span class="sticky-ind">Offer</span>
+                                                                <div class="ninzio-overlay">
+                                                                    <a class="nz-overlay-before" title="View More" href="it-services/digital-marketing-in-gwalior.aspx" ></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="post-body">
+                                                                <div class="post-body-in">
+                                                                    <h2 class="post-title"><a href="it-services/digital-marketing-in-gwalior.aspx" title="Digital-Marketing Company in Gwalior" rel="bookmark">Digital-Marketing Services</a></h2>
+                                                                    
+                                                                    <div class="post-excerpt">Our <strong>digital-Marketing Services</strong> Provide services or products using digital technologies mainly on the Internet.  We also include mobile phones, display advertising and any other digital medium.</div>
+                                                                    <a class="post-more" href="it-services/digital-marketing-in-gwalior.aspx" title="Digital-Marketing Company in Gwalior">Read more<span class="screen-reader-text">Digital-Marketing</span></a></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="post item format-video nz-clearfix" data-grid="ninzio_01">
+                                                            <div class="nz-thumbnail">
+                                                                <div class="post-category">
+                                                                    <ul class="post-categories">
+                                                                        <li><a href="it-services/best-training-institute.aspx" rel="category tag" title="IT Courses">IT Courses</a></li>
+                                                                    </ul>
+                                                                </div><img src="its-image/small-images/it-company/computer-courses.webp" class="attachment-Montserrat-Ninzio-Half size-Montserrat-Ninzio-Half wp-post-image" alt="Training Institute in Gwalior" /><span class="sticky-ind">Offer</span>
+                                                                <div class="ninzio-overlay">
+                                                                    <a class="nz-overlay-before" title="View More" href="it-services/best-training-institute.aspx"></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="post-body">
+                                                                <div class="post-body-in">
+                                                                    <h2 class="post-title"><a href="it-services/best-training-institute.aspx" title="Computer courses in gwalior" rel="bookmark">IT Courses</a></h2>
+                                                                    
+                                                                    <div class="post-excerpt"><strong> IT Courses</strong> in Gwalior and Bhopal Offer on latest technologies in the Web Designing, Web development, Graphics Designing and Digital Marketing Courses.</div><br>
+                                                                    <a class="post-more" href="it-services/best-training-institute.aspx" title="IT Courses in Gwalior">Read more<span class="screen-reader-text">IT Courses</span></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="post item format-quote nz-clearfix" data-grid="ninzio_01">
+                                                            <div class="nz-thumbnail">
+                                                                <div class="post-category">
+                                                                    <ul class="post-categories">
+                                                                        <li><a href="http://digitalgwalior.com/" target="_blank" rel="category tag" title="Video Production">Video Making</a></li>
+                                                                    </ul>
+                                                                </div><img  src="its-image/small-images/it-company/intro-video1.webp" class="attachment-Montserrat-Ninzio-Half size-Montserrat-Ninzio-Half wp-post-image" alt="Video Production Company in Gwalior" />
+                                                                <div class="ninzio-overlay">
+                                                                    <a class="nz-overlay-before" title="View More" href="http://digitalgwalior.com/" target="_blank"></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="post-body">
+                                                                <div class="post-body-in">        
+                                                                    <h2 class="post-title"><a href="http://digitalgwalior.com/" target="_blank" title="Video Production Company in Gwalior" rel="bookmark">Video Production</a></h2>
+                                                                    
+                                                                    <div class="post-excerpt">We Provide <strong>Video Making</strong> Services Slide Show Video, Social Media Video, Testimonial Video, Aniversary video and invitation card design video in India. Our Production House Name is DG ( Digital Generation) Production House. </div><br>
+                                                                    <a class="post-more" href="http://digitalgwalior.com/" target="_blank" title="Technical Support Company in Gwalior">Read more<span class="screen-reader-text">Video Production</span></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="post item format-status nz-clearfix" data-grid="ninzio_01">
+                                                            <div class="nz-thumbnail">
+                                                                <div class="post-category">
+                                                                    <ul class="post-categories">
+                                                                        <li><a href="Job/find-job.aspx" rel="category tag" title="Jobs in Gwalior">Jobs in Gwalior</a></li>
+                                                                    </ul>
+                                                                </div><img src="its-image/small-images/it-company/job.webp" class="attachment-Montserrat-Ninzio-Half size-Montserrat-Ninzio-Half wp-post-image" alt="Jobs in Gwalior" />
+                                                                <div class="ninzio-overlay">
+                                                                    <a class="nz-overlay-before" title="View More" href="Job/find-job.aspx"></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="post-body">
+                                                                <div class="post-body-in">
+                                                                    <h2 class="post-title"><a href="Job/find-job.aspx" title="Jobs in gwalior" rel="bookmark">Jobs in Gwalior</a></h2>
+                                                                    <div class="post-excerpt">ITS-Gwalior is the leading local <strong>jobs</strong> provider company in Gwalior. We provide facility of job posting and Resume posting.</div><br>
+                                                                    <a class="post-more" href="Job/find-job.aspx" title="Jobs in Gwalior">Read more<span class="screen-reader-text">Jobs in gwalior</span></a>                                             </div>
+                                                            </div>
+                                                        </div>
+                                                       </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                
+
+    <div class="nz-section horizontal autoheight-false animate-false full-width-false " data-animation-speed="35000" data-parallax="false" style="padding-top:0px; background:#fff; color:#000; padding-bottom:30px;">
+                                    <div class="container">
+                                        <div class="nz-row">
+                                            <div class="col vc_col-sm-12 vc_col-lg-3 vc_col-md-2 vc_col-xs-12 col12  element-animate-false valign-top"  data-effect="none" data-align="center" data-margin="false">
+                                                <div class="col-inner" ></div>
+                                            </div>
+                                            <div class="col vc_col-sm-12 vc_col-lg-12 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"  data-effect="none" data-align="left" data-margin="false">
+                                                <div class="col-inner" >
+                                                    <h1 class="vc_custom_heading ninzio-latter-spacing " id="h3_7e0b_01">Digital Marketing Company in Gwalior</h1>
+                                                    <div class="sep-wrap element-animate element-animate-false center nz-clearfix" data-effect="none">
+                                                        <div class="nz-separator solid " id="div_7e0b_2">&nbsp;</div>
+                                                    </div>
+                                                    <div  class="nz-column-text nz-clearfix no-padding element-animate-false" data-effect="none" data-effect-speed="50">
+                                                        
+                                                        <p class="p_7e0b_3"><span class="span_7e0b_3">If you want to brand the product or services or your business name and you want to use <strong> digital-marketing services</strong>. So in this case, our company, <strong>ITS-Gwalior </strong>- <strong>Best Digital-marketing company in Gwalior and Bhopal</strong>, delivers excellent marketing of <strong> digital marketing </strong> and works very well. The details of our services are given below. You can read more about them and get more information.</span></p>
+                                                        <p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col vc_col-sm-12 vc_col-lg-3 vc_col-md-2 vc_col-xs-12 col12  element-animate-false valign-top"  data-effect="none" data-align="left" data-margin="false">
+                                                <div class="col-inner" ></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                 <%--<div class="col-inner" >
+                                    <h2 id="h3_df14_1" class="vc_custom_heading ninzio-latter-spacing">Digital Marketing Company in Gwalior</h2>
+                                         <div class="sep-wrap element-animate element-animate-false center nz-clearfix" data-effect="none">
+                                             <div class="nz-separator solid" id="div_df14_19">&nbsp;</div>
+                                         </div>
+                                 </div>--%>
+
+                               <div class="nz-section horizontal autoheight-true animate-false full-width-false " data-animation-speed="35000" data-parallax="false" id="div_8b9f_6">
+                                    <div class="container">
+                                        <div class="nz-row">
+                                            <div class="col vc_col-sm-12 vc_col-lg-8 vc_col-md-12 vc_col-xs-12 col12  element-animate-false valign-middle"  data-effect="none" data-align="left">
+                                                <div class="col-inner" >
+                                                    <div class="nz-content-box nz-clearfix v1 left animate-none" data-columns="2" data-animate="false">
+                                                        <div id="nz-box-7" class="  back_active nz-box element-animate">
+                                                            <div class="nz-box-wrap">
+                                                                <div class="box-icon-wrap">
+                                                                    <div class="box-icon icon-search"></div>
+                                                                </div>
+                                                                <div class="box-data">
+                                                                    <h2 class="box-title">SEO Services </h2>
+                                                                    <strong>SEO Services</strong> is primarily concerned with ensuring that your website ranks higher in search engine results. We Provide Technical SEO, On-Page SEO, Off-Page SEO and other.<br /> <a href="digital-marketing/seo-services.aspx" class="img1a">Read More</a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="nz-box-8" class="  back_active nz-box element-animate">
+                                                            <div class="nz-box-wrap">
+                                                                <div class="box-icon-wrap">
+                                                                    <div class="box-icon icon-facebook"></div>
+                                                                </div>
+                                                                <div class="box-data">
+                                                                    <h2 class="box-title">Social Media Manager</h2>
+                                                                    <strong> Social-Media Manager</strong> is the new age of the Internet Community. The fact is that people are addicted of <strong>social media</strong>. We provide Social Media Page Optimization and Social Media Page Marketing Services in India.<br /> <a href="digital-marketing/social-media-manager.aspx" class="img1a">Read More</a></div>
+                                                            </div>
+                                                        </div>
+                                                       
+                                                        <div id="nz-box-10" class="  back_active nz-box element-animate">
+                                                            <div class="nz-box-wrap">
+                                                                <div class="box-icon-wrap">
+                                                                    <div class="box-icon icon-chat"></div>
+                                                                </div>
+                                                                <div class="box-data">
+                                                                    <h2 class="box-title">Google Digital Marketing</h2>ITS Gwalior is <strong> Best Google Digital Marketing Company</strong> in India. ITS Gwalior Work in Google Business Page, Google Search Console, Google Analytics, Google Ad Sense and Google Ad words.<br /><br /> <a href="digital-marketing/google-digital-marketing.aspx" class="img1a">Read More</a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="nz-box-11" class="  back_active nz-box element-animate">
+                                                            <div class="nz-box-wrap">
+                                                                <div class="box-icon-wrap">
+                                                                    <div class="box-icon icon-globe"></div>
+                                                                </div>
+                                                                <div class="box-data">
+                                                                    <h2 class="box-title">Online Reputation Management</h2> <strong> ORM</strong> - <strong>Online Reputation Management</strong> is used to brand our products or services. <strong>Orm</strong> is used to give a brand name to many websites. We focus on seo, smo, link building and view in orm. By which we get the name of the brand.<br /><br /> <a href="digital-marketing/orm.aspx" class="img1a">Read More</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col vc_col-sm-12 vc_col-lg-4 vc_col-md-12 vc_col-xs-12 col12  element-animate-false valign-middle"  data-effect="none" data-align="left">
+                                                <div class="col-inner" ><img class="aligncenter size-full wp-image-5476 " src="its-image/orm.webp" alt="5476" width="264" height="522"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                         <%--    <div class="nz-section horizontal autoheight-false animate-false full-width-false " data-img-width="1600" data-img-height="885" data-animation-speed="35000" data-parallax="false" id="div_7e0b_4">
+                                    <div id="div_7e0b_5" class="fixed-container"></div>
+                                    <div class="container">
+                                        <div class="nz-row">
+                                            <div class="col vc_col-sm-12 col12  element-animate-false valign-top"  data-effect="none" data-align="center">
+                                                <div class="col-inner" >
+                                                    <h1 id="h2_7e0b_0" class="vc_custom_heading">Ready to discuss your project</h1>
+                                                    <div class='gap nz-clearfix' id="div_7e0b_6" style="color:#fff; font-size:20px;"></div>
+                                                    <a class="button button-normal default full-false medium square animate-false anim-type-ghost hover-fill element-animate-false" id="btn11a" href="contact-us.aspx" target="_self" data-effect="none"><span class="txt">Click here</span></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>--%>
+    
+                   
+                            
+           <div id="custom-service" class="nz-section horizontal autoheight-false animate-false full-width-false " data-animation-speed="35000" data-parallax="false" >
+                                    <div class="container">
+                                        <div class="nz-row">
+                                            <div class="col vc_col-sm-3 col3  element-animate-false valign-top"  data-effect="none" data-align="left">
+                                                <div class="col-inner" >
+                                             <div class="col-inner" >
+
+                                                 <a href="it-services/design-company-in-gwalior.aspx">
+
+                                                    <h2 class="vc_custom_heading ninzio-latter-spacing left " id="h3_7e0b_02" style="text-align:left; color:#f0634c; font-size:22px;">Design</h2>
+                                                   
+                                                 </a>
+                                                  <div class="sep-wrap element-animate element-animate-false left nz-clearfix" data-effect="none">
+                                                        <div class="nz-separator solid " id="div_7e0b_23" >&nbsp;</div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                    <ul class="nz-i-list ">
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_166" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.4000/-"><span id="span_ff88_170" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/design-company-in-gwalior.aspx"><h6>Web Design</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_167" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.6000/-"><span id="span_ff88_1710" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/graphics-design.aspx"><h6>Graphics Design</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_168" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.5000/-"><span id="span_ff88_171" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/web-design-company.aspx"><h6>UI UX Design </h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_169" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.5000/-"><span id="span_ff88_172" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/ppt.aspx"><h6>PPT Design</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_161" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.7000/-"><span id="span_ff88_173" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/web-design-company.aspx"><h6>Responsive Web Design</h6> </a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_162" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.6000/-"><span id="span_ff88_174" class="nz-popup-border"></span></span>&nbsp; </div>
+                                                            <div><a href="it-services/web-design-company.aspx"><h6>Web Design Services</h6></a></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col vc_col-sm-3 col3  element-animate-false valign-top"  data-effect="none" data-align="left">
+                                                <div class="col-inner" >
+                                                    <a href="it-services/web-development-company-in-gwalior.aspx">
+                                                         <h2 class="vc_custom_heading ninzio-latter-spacing left " id="h3_7e0b_03" style="text-align:left; color:#f0634c; font-size:22px;">Development</h2>
+                                                            </a>
+                                                    <div class="sep-wrap element-animate element-animate-false left nz-clearfix" data-effect="none">
+                                                        <div class="nz-separator solid " id="div_7e0b_24" >&nbsp;</div>
+                                                    </div>
+                                                    <ul class="nz-i-list ">
+                                                     
+                                                        
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_163" data-position="right" data-in="fadeInRight" data-tipso="Rs.4000/- Web View"><span id="span_ff88_175" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/software-company.aspx"><h6>Software Development</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_164" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-"><span id="span_ff88_176" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/mobile-app-development-company.aspx"><h6>Mobile Apps Development</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_165" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-"><span id="span_ff88_177" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/website-development-company.aspx"><h6>Web Development</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-"><span class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/website-development-company.aspx"><h6>Portal Development</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-"><span class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/website-development-company.aspx"><h6>ASP Development</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1667" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-"><span id="span_ff88_1780" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="it-services/website-development-company.aspx"><h6>PHP Development</h6></a></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col vc_col-sm-3 col3  element-animate-false valign-top"  data-effect="none" data-align="left">
+                                                <div class="col-inner" >
+                                                       <a href="it-services/digital-marketing-in-gwalior.aspx">
+                                                          <h2 class="vc_custom_heading ninzio-latter-spacing left " id="h3_7e0b_04" style="text-align:left; color:#f0634c; font-size:22px;">Digital Marketing</h2>
+                                                              </a>
+
+                                                    <div class="sep-wrap element-animate element-animate-false left nz-clearfix" data-effect="none">
+                                                        <div class="nz-separator solid " id="div_7e0b_25">&nbsp;</div>
+                                                    </div>
+                                                    <ul class="nz-i-list ">
+                                                    
+
+                                                       
+
+
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1668" data-position="right" data-in="fadeInRight" data-tipso="Ask for prize"><span id="span_ff88_1781" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="digital-marketing/social-media-manager.aspx"><h6>Social Media Manager</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1669" data-position="right" data-in="fadeInRight" data-tipso="Starting @0.10 Paise 1l"><span id="span_ff88_1782" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="digital-marketing/seo-services.aspx"><h6>Search Engine Marketing</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1670" data-position="right" data-in="fadeInRight" data-tipso="Ask for prize"><span id="span_ff88_1783" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="digital-marketing/google-digital-marketing.aspx"><h6>Pay Per Click</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1671" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.5,000/-"><span id="span_ff88_1784" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="digital-marketing/orm.aspx"><h6>Online Reputation Management</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1672" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.100/-Month"><span id="span_ff88_1785" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="digital-marketing/google-digital-marketing.aspx"><h6>Google Digital Marketing</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1673" data-position="right" data-in="fadeInRight" data-tipso="Post Resume Start Rs.500/-"><span id="span_ff88_1786" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="digital-marketing/social-media-manager.aspx"><h6>Social Media Marketing</h6></a></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                              <div class="col vc_col-sm-3 col3  element-animate-false valign-top"  data-effect="none" data-align="left">
+                                                <div class="col-inner" >
+                                                     <a href="it-services/best-training-institute.aspx">
+                                                        <h2 class="vc_custom_heading ninzio-latter-spacing left " id="h3_7e0b_05" style="text-align:left; color:#f0634c; font-size:22px;">IT Courses</h2>
+                                                           </a>
+                                                        
+                                                          <div class="sep-wrap element-animate element-animate-false left nz-clearfix" data-effect="none">
+                                                        <div class="nz-separator solid " id="div_7e0b_26">&nbsp;</div>
+                                                    </div>
+                                                    <ul class="nz-i-list ">
+
+                                                         
+
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1674" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-"><span id="span_ff88_1787" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="training/digital-marketing-course.aspx"><h6>Digital Marketing Course</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1675" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-"><span id="span_ff88_1788" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="training/web-design-course.aspx"><h6>Web Designing Course</h6></a></div>
+                                                        </li>
+                                                       <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1676" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-"><span id="span_ff88_1789" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="#"><h6>Web Development Course</h6></a></div>
+                                                        </li>  
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1678" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-"><span id="span_ff88_1790" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="training/graphic-design-course.aspx"><h6>Graphic Designing Course</h6></a></div>
+                                                        </li>
+                                                       
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1679" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-"><span id="span_ff88_1791" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="#"><h6>Job Based Training</h6></a></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span class="nz-popup icon-bulb bulbcolor" id="span_ff88_1680" data-position="right" data-in="fadeInRight" data-tipso="Basic start Rs.15,000/-" ><span id="span_ff88_1792" class="nz-popup-border"></span></span>&nbsp;</div>
+                                                            <div><a href="#"><h6>Internship Training</h6></a></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+     <!--<div style="display:none;">
+                <audio controls  autoplay>
+  <source src="Sare_Jahan_Se_Acha2.mp3" type="audio/ogg">
+  <source src="Sare_Jahan_Se_Acha2.mp3" type="audio/mpeg">
+</audio></div>-->
+    
+</asp:Content>
+

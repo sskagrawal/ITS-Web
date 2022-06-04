@@ -1,0 +1,13 @@
+﻿ .kkBtn
+    {
+    border: medium none;
+    color: #fff;
+    display: inline-block;
+    margin: 0 0 5px;
+    outline: medium none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase !important;
+    z-index: 1;
+    }

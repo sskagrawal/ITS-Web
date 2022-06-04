@@ -1,0 +1,11 @@
+﻿ fieldset {
+            border: 1px solid #F0634C;  
+        } 
+
+        legend {
+            padding: 0.2em 0.5em;
+            /*border:1px solid green;*/
+            color: #F0634C;
+            font-size: 200%;
+            text-align: right;
+        }

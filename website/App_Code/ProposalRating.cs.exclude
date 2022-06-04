@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// Summary description for ProposalRating
+/// </summary>
+public class ProposalRating
+{
+
+    public int TotalRatings = 0;
+    public double AvgRatings = 0;
+    //
+    // TODO: Add constructor logic here
+    //
+
+}

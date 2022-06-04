@@ -1,0 +1,110 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="job-apply-now.aspx.cs" Inherits="JobApplyNow" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:HiddenField ID="hdfRequsetID" runat="server" />
+<asp:HiddenField ID="hdfJobMSTID" runat="server" />
+<asp:HiddenField ID="hdfUserID" runat="server" />
+     <header class="rich-header page-header version1" data-parallax="true" id="header_d901_0">
+                    <div class="parallax-container" id="div_d901_0">&nbsp;</div>
+
+                    <div class="container nz-clearfix">
+                        <div class="rh-content">
+
+                            <h1>Job Apply</h1>
+                          
+
+                            <div class="rh-separator">&nbsp;</div>
+                            <div id="div_d901_1" class="nz-breadcrumbs nz-clearfix"><a href="default.aspx"  property="v:title">Home</a><span class="current">Job Apply</span></div>
+                        </div>
+                    </div>
+                    <div id="slider-arrow" data-target="#nz-target" data-from="90" data-offset="90" class="i-separator animate nz-clearfix"><i class="icon-arrow-down10"></i></div>
+                </header>
+     <div class="blog-layout-wrap standard sidebar-true" id="nz-target">
+
+        <div id="loop" class="loop">
+            <div class="container nz-clearfix">
+
+                <section class="main-content left">
+                                <section class="content lazy blog-layout nz-clearfix">
+                                    <div class="blog-post blog-post-1 nz-clearfix">
+                                    <div class="column-12" style="text-align:center;">
+
+                                    <div class="col-inner">
+                                                    <h3 id="h3_01b4_1" class="vc_custom_heading ninzio-latter-spacing">Job Apply</h3>
+                                                    <div class="sep-wrap element-animate element-animate-false center nz-clearfix" data-effect="none">
+                                                        <div class="nz-separator solid" id="div_01b4_21">&nbsp;</div>
+                                                    </div>
+                                                    
+                                                </div>
+                            
+                                   <br />
+                                   <div id="alert" runat="server" visible="false" class="alert success">
+                                                        <%--<div class="alert-message">Your Profile Updated Successfully
+                                                        </div>--%>
+<asp:Label ID="lblMSG" runat="server" Text=""></asp:Label>
+                                                        <span class="close-alert">X</span>
+                                                        </div>
+
+                                                     
+<div class="col12">
+       <h3 style="padding-top: 14px;">Company Name: <strong><asp:Label ID="lblCompanyName" runat="server" Text="Label"></asp:Label></strong></h3>
+                              <p><strong>Contact Info: Name: </strong><asp:Label ID="lblPersonName" runat="server" Text="Label"></asp:Label>&nbsp;|&nbsp;<strong>Mobile No.: </strong><asp:Label ID="lblMobileNo" runat="server" Text="Label"></asp:Label>&nbsp;|&nbsp;<strong>Email ID.: </strong><asp:Label ID="lblEmailID" runat="server" Text="Label"></asp:Label></p>
+                              <p>
+                                  <strong>Website: </strong>
+                                  <asp:Label ID="lblWeb" runat="server" Text="Label"></asp:Label>
+                                 <%-- <a href="<%# Eval("Website")%>" target="_blank">Click Here</a>--%>
+                                  &nbsp;|&nbsp;
+                                  <strong>Address: </strong><asp:Label ID="lblAddr" runat="server" Text="Label"></asp:Label></p>   
+    <br />
+    <br /> 
+                           
+                         <a runat="server" href="../Job/find-job.aspx" class="button button-3d green full-false medium square icon-true animate-false anim-type-ghost element-animate-false" style="background-color:#3C9F04"><span class="txt">Back</span></a>      
+    </div>
+
+                                     
+                                    </div>
+                                        </div>
+                                </section>
+                           
+                            </section>
+                <aside class="sidebar">
+                                <aside class='blog-widget-area widget-area'>
+
+                                   
+                                   <%-- <div id="respond" class="comment-respond">
+                                                    <h3 id="reply-title" class="comment-reply-title">Our Services</h3>
+                                                    <ul class="list" style="list-style-type:none;">
+                                                    <li><a href="#">Website Design</a></li>
+                                                     <li><a href="#">Development</a></li>
+                                                      <li><a href="#">Web Application</a></li>
+                                                       <li><a href="#">Mobile Application</a></li>
+                                                        <li><a href="#">E-commerce Development</a></li>
+                                                         <li><a href="#">Portal Developmment</a></li>
+                                                          <li><a href="#">Computer Support</a></li>
+                                                    </ul>
+                                                 
+                                          </div>--%>
+                                    <div id="tag_cloud-2" class="widget widget_tag_cloud">
+                                        <h6 class="widget_title">Quick Links</h6>
+                                        <div class="tagcloud">
+
+                                            <a runat="server" href="~/Job/find-job.aspx" class='tag-link-108 tag-link-position-1' title='Find Job' id="a_f795_0">Find Job </a>
+                                            <%--<a runat="server" href="~/FindResumes.aspx" class='tag-link-108 tag-link-position-1' title='Find Resumes' id="a1">Find Resumes</a>--%>
+                                             <a runat="server" href="~/Jobseeker/job-profile.aspx" class='tag-link-108 tag-link-position-1' title='Job Profile' id="a2">Job Profile</a>
+                                             <a runat="server" href="~/Jobseeker/job-sheekar-myprofile.aspx" class='tag-link-108 tag-link-position-1' title='My Profile' id="a3">My Profile </a>
+                                             <a runat="server" href="~/change-password.aspx" class='tag-link-108 tag-link-position-1' title='Change Password' id="a4">Change Password</a>
+                                             
+                                           </div>
+                                    </div>
+                                </aside>
+                            </aside>
+
+            </div>
+        </div>
+
+    </div>
+</asp:Content>
+
+
